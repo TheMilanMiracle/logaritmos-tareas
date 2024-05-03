@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "mtree.h": "c",
+        "stdlib.h": "c",
+        "random": "c"
+    }
+}
