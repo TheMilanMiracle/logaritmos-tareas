@@ -115,18 +115,18 @@ void searchTreeRec(MTree* t, Point *q, double r, List *points){
 
     printf("post Node\n");
 
-    Entry *entry;
+    Entry *entry = t->root->entries[0];
 
-    if(root->n == 0){
+    if(entry->a == NULL){
         printf("NULL\n");
 
         int n = root->n;
 
-        Entry **entries = t->root->entries;
-        entry = *entries;
+        for(int i = 0; i < n; i++){// O(n)
 
-        for(int i = 0; i < n; i++){
-            
+            entry = root->entries[i];// O(1)
+
+            printf("dist = %f | r = %f \n", dist(entry->p, q), r);
             
             if(dist(entry->p, q) <= r){
 
@@ -134,8 +134,6 @@ void searchTreeRec(MTree* t, Point *q, double r, List *points){
 
             }
 
-            entries += sizeof(Entry);
-            entry = *(t->root->entries);
 
         }
 
@@ -151,10 +149,10 @@ void searchTreeRec(MTree* t, Point *q, double r, List *points){
 
         Entry **entries = root->entries;
 
-        for(int i = 0; i < n; i++){
+        for(int i = 0; i < n; i++){// O(n)
             printf("for\n");
             
-            entry = entries[i];
+            entry = entries[i];// O(1)
             if(dist(entry->p, q) <= r + entry->c_r){
                 printf("if\n");
 
@@ -170,19 +168,17 @@ void searchTreeRec(MTree* t, Point *q, double r, List *points){
 
 List *searchTree(MTree* t, Point*q, double r){
 
-    List *points = malloc(sizeof(List));
+    List *points = list_create();
 
     Node *root = t->root;
 
-    if(dist(t->root_entry->p, q) <= r){
+    // if(dist(t->root_entry->p, q) <= r){
 
-        list_add(points, t->root_entry->p);
+    //     list_add(points, t->root_entry->p);
 
-        printf("add\n");
+    //     printf("add\n");
 
-    }
-
-
+    // }
     
     searchTreeRec(t, q, r, points);
 

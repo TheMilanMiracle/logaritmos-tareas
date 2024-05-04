@@ -6,7 +6,7 @@
 
 #include "mtree.h"
 
-#define B 4096
+#define B 4096 / sizeof(Entry) // B = 4096 / sizeof(Entry) = 512
 #define b B/2
 
 double dist(Point *p1, Point *p2){
@@ -41,106 +41,145 @@ void list_add(List* list, void* element){
 
 }
 
-List_element *list_remove(List* list, int n){
+List_element *list_peek(List* list, int i){
 
     List_element *le = list->last; 
 
     while(1){
 
-        if(n == 0){
-            if(list->len > 1 && le->prev){
-
-                le->prev->next = le->next;
-
-
-
-            }
-            if(list->len > 1 && le->next){
-
-                le->next->prev = le->prev;
-
-            }
-            else{
-
-                if(list->len > 1)list->last = le->prev;
-
-            }
-
-            list->len--;
+        if(i == 0){
+            
             return le;
 
         }
 
         le = le->prev;
 
-        n = n-1;
+        i--;
     }
 
 }
 
 
-MTree *ciaccia_patella(List *set){
+List_element *list_get(List* list, int i){
 
-    List *copy = set;
+    List_element *i_element = list_peek(list, i);
+
+    if(list->len > 1 && i_element->prev){
+
+        i_element->prev->next = i_element->next;
 
 
-    if(set->len <= B){return;}
+    }
+    if(list->len > 1 && i_element->next){
 
-    int k = min(B, set->len/B), temp = k;
+        i_element->next->prev = i_element->prev;
 
-    Point F[k];
-    List *sample_sets[k];
+    }
+    else{
 
-    while(temp--){
-
-        F[temp-k] = *(list_remove(set, rand() % set->len)->element);
+        if(list->len == 0) list->last = i_element->prev;
 
     }
 
-    while(set->len){
+    list->len--;
 
-        Point *current = list_remove(set, 0)->element;
+    return i_element;
+}
 
-        int closer = 0;
+typedef struct tuple{
+    void *_1, *_2;
+} Tuple;
 
-        double min = dist(closer, current);
+Tuple *tuple(void* f, void *s){
+    Tuple *new = malloc(sizeof(Tuple));
 
-        for(int i = 1; i < k; i++){
-            
-            double d = dist(&F[i], current);
+    new->_1 = f;
+    new->_2 = s;
 
-            if(d < min){
+    return new;
 
-                closer = i;
-                min = d;
+}
 
-            }
+
+MTree *ciaccia_patella(List *set){
+    List *F = list_create();
+
+    if(set->len <= B){return;}//paso 1
+
+    while(1){
+        int k = min(B, set->len/B), temp = k;
+
+        List *sample_sets[k];
+
+        while(temp--){// paso 2, se extran k puntos aleatorios de S
+
+            list_add(F, tuple(list_get(set, rand() % set->len)->element, list_create()));
 
         }
 
-        list_add(sample_sets[closer], current);
+        while(set->len){// paso 3, para los n-k puntos restantes se les busca su sample más cercano
 
-    }
+            Point *current = list_get(set, 0)->element;
 
-    int len = k;
+            int closer = 0;
 
-    for(int i = 0; i < k; i++){
+            double min = dist(closer, current);
 
-        if(sample_sets[i]->len < b){
+            for(int i = 1; i < k; i++){// se busca el sample más cercano 
+                
+                double d = dist(list_peek(F, i)->element, current);
 
-            len--;
+                if(d < min){
 
-            while(sample_sets[i]->len){
+                    closer = i;
+                    min = d;
 
-                Point *current = list_remove(sample_sets[i], 0);
+                }
 
-                int closer = 0;
+            }
 
-                double min = dist(closer, current);
+            list_add(F->)
 
-                for(int j = 1; j < k; j++){
-            
-                    double d = dist(&F[j], current);
+        }
+
+
+        for(int i = 0; i < k; i++){
+
+            if(sample_sets[i]->len < b){
+
+                while(sample_sets[i]->len){
+
+                    Point *current = list_get(sample_sets[i], 0);
+
+                    int closer = 0;
+
+                    double min = dist(closer, current);
+
+                    for(int j = 1; j < k; j++){
+                
+                        double d = dist(list_peek(F, i)->element, current);
+
+                        if(i != j && sample_sets[j]->len > 0 && d < min){
+
+                            closer = j;
+                            min = d;
+
+                        }
+                    }
+
+                    list_add(sample_sets[closer], current);
+                }
+
+                Point *sample = list_peek(F, i)->element;
+
+                int closer = 0 ? i!=0 : 1;
+
+                double min = DBL_MAX;
+
+                for(int j = 0; j < k; j++){
+                
+                    double d = dist(list_peek(F, i)->element, sample);
 
                     if(i != j && sample_sets[j]->len > 0 && d < min){
 
@@ -150,72 +189,51 @@ MTree *ciaccia_patella(List *set){
                     }
                 }
 
-                list_add(sample_sets[closer], current);
-            }
-
-            Point *sample = &F[i];
-
-            int closer = 0 ? i!=0 : 1;
-
-            double min = DBL_MAX;
-
-            for(int j = 0; j < k; j++){
-            
-                double d = dist(&F[j], sample);
-
-                if(i != j && sample_sets[j]->len > 0 && d < min){
-
-                    closer = j;
-                    min = d;
-
-                }
-            }
-
-            list_add(sample_sets[closer], sample);
-
-        }
-
-    }
-
-    if(len == 1){
-
-        for(int i = 0; i < k; i++){
-
-            if(sample_sets[i]->len != 0){
-
-                list_add(sample_sets[i], &F[i]);
-                return ciaccia_patella(&sample_sets[i]);
+                list_add(sample_sets[closer], sample);
 
             }
 
         }
 
+        if(F->len == 1){
+
+            list_add(set, list_get(F, 0));
+
+        }
+        else{break;}
     }
-    else{
 
-        List *forest = list_create();
-        List *new_samples = list_create();
+    List *forest = list_create();
+    List *new_samples = list_create();
 
-        for(int i = 0; i < k; i++){
+    for(int i = 0; i < F->len; i++){
 
-            if(sample_sets[i]->len != 0){
+        if(sample_sets[i]->len != 0){
 
 
-                MTree *tree = ciaccia_patella(sample_sets[i]);
+            MTree *tree = ciaccia_patella(sample_sets[i]);
 
-                if(tree->root->n < b){
+            if(tree->root->n < b){
 
-                    for(int j = 0; j < tree->root->n; j++){
+                for(int j = 0; j < tree->root->n; j++){
 
-                        list_add(forest, )
-
-                    }
+                    // list_add(forest, )
 
                 }
 
             }
 
         }
+    }
+
+
+        // List forest = {... arboles ...};
+
+        // ENTRY *entries[n] = malloc(sizeof(ENTRY)*n)
+
+        // for(i in range(n)) entries[n] = list_peek(forest, i)
+
+        // NODE->entries = entries
 
 
 

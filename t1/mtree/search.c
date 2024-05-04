@@ -4,6 +4,78 @@
 #include "utils.c"
 #include <math.h>
 
+List *list_create(){
+    List *list = malloc(sizeof(List));
+
+    return list;
+}
+
+void list_add(List* list, void* element){
+
+    List_element *last = list->last;
+
+    List_element *new = malloc(sizeof(List_element));
+
+    new->element = element;
+
+    new->prev = last;
+
+    new->next = NULL;
+
+    if(list->len > 0){last->next = new;}
+
+    list->last = new;
+
+    list->len++;
+
+}
+
+List_element *list_peek(List* list, int i){
+
+    List_element *le = list->last; 
+
+    while(1){
+
+        if(i == 0){
+            
+            return le;
+
+        }
+
+        le = le->prev;
+
+        i--;
+    }
+
+}
+
+
+
+
+List_element *list_get(List* list, int i){
+
+    List_element *i_element = list_peek(list, i);
+
+    if(list->len > 1 && i_element->prev){
+
+        i_element->prev->next = i_element->next;
+
+
+    }
+    if(list->len > 1 && i_element->next){
+
+        i_element->next->prev = i_element->prev;
+
+    }
+    else{
+
+        if(list->len == 0) list->last = i_element->prev;
+
+    }
+
+    list->len--; 
+}
+
 
 List *point_list;
 
@@ -30,13 +102,11 @@ void searchTreeRec(MTree* t, Point *q, double r){
 
     if(entry->a == NULL){
 
-        int n = sizeof(root) / sizeof(Entry);
-
-        Entry **entries = t->root->entries;
-        entry = *entries;
+        int n = root->n;
 
         for(int i = 0; i < n; i++){
-            
+
+            entry = list_peek(root->entries, i);
             
             if(dist(entry->p, q) <= r){
 
@@ -44,8 +114,6 @@ void searchTreeRec(MTree* t, Point *q, double r){
 
             }
 
-            entries += sizeof(Entry);
-            entry = *(t->root->entries);
 
         }
 

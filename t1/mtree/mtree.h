@@ -19,9 +19,9 @@ typedef struct mtree{
 } MTree;
 
 typedef struct list_element{
-    Point* element;
+    void* element;
     struct list_element *prev, *next;
-}List_element;
+} List_element;
 typedef struct list{
     List_element* last;
     int len;
