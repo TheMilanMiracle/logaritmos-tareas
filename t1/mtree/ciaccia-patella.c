@@ -98,7 +98,6 @@ Tuple *tuple(void* f, void *s){
     new->_2 = s;
 
     return new;
-
 }
 
 
@@ -139,7 +138,7 @@ MTree *ciaccia_patella(List *set){
 
             }
 
-            list_add(F->)
+            list_add();
 
         }
 
