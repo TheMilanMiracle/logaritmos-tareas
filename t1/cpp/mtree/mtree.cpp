@@ -4,11 +4,11 @@
 #include <cmath>
 #include "./mtree.h"
 
-struct mtree *newMTree(struct node *root, int h){
+struct mtree *newMTree(struct entry *entry){
     struct mtree *new_tree = (struct mtree*) std::malloc(sizeof(struct mtree));
 
-    new_tree->root = root;
-    new_tree->h = h;
+    new_tree->entry = entry;
+    // new_tree->h = h;
 
     return new_tree;
 }

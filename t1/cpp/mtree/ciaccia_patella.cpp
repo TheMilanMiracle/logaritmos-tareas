@@ -25,7 +25,7 @@ struct mtree *ciaccia_patella(std::vector<struct point*> set){
 
         }
 
-        sub = newMTree(newNode(sub_entries), 1); // subarbol con los puntos del input
+        sub = newMTree(newNode(sub_entries)); // subarbol con los puntos del input
         
         return sub;
 
@@ -193,7 +193,7 @@ struct mtree *ciaccia_patella(std::vector<struct point*> set){
 
     for(int i = 0; i < Forest.size(); i++){// O(N)
 
-        if(Forest[i]->h = h){
+        if(Forest[i]->h == h){
 
             T.push_back(Forest[i]);
 

@@ -18,11 +18,10 @@ struct entry{
     struct node *a;
 };
 struct mtree{
-    struct node *root;
-    int h;
+    struct entry *entry;
 };
 
-struct mtree *newMTree(struct node *root, int h);
+struct mtree *newMTree(struct entry *entry);
 struct point *newPoint(double x, double y);
 struct entry *newEntry(struct point *point, double c_r, struct node *a);
 struct node *newNode(std::vector<struct entry*> entries);
@@ -33,5 +32,9 @@ std::vector<struct point*> searchTree(struct mtree* t, struct point*q, double r)
 
 const int B = 4096 / sizeof(struct entry);
 const int b = B / 2;
+
+struct mtree *ciaccia_patella(std::vector<struct point*> set);
+
+std::vector<struct point*> generate_points(double n);
 
 #endif
