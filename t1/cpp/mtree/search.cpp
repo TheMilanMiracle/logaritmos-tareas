@@ -5,9 +5,9 @@
 
 void searchTreeRec(struct mtree *t, struct point *q, double r, std::vector<struct point*> *points){
 
-    Node *root = t->root;
+    Node *root = t->entry->a;
 
-    if(t->root->entries[0]->a == NULL){
+    if(t->entry->a->entries[0]->a == NULL){
 
         int n = root->entries.size();
 
@@ -37,7 +37,7 @@ void searchTreeRec(struct mtree *t, struct point *q, double r, std::vector<struc
 
             if(dist(entry->p, q) <= r + entry->c_r){
 
-                searchTreeRec(newMTree(entry->a, -1), q, r, points);
+                searchTreeRec(newMTree(entry), q, r, points);
 
             }
 
@@ -51,7 +51,7 @@ std::vector<struct point*> searchTree(struct mtree* t, struct point*q, double r)
 
     std::vector<Point*> points;
 
-    Node *root = t->root;
+    Node *root = t->entry->a;
     
     searchTreeRec(t, q, r, &points);
 

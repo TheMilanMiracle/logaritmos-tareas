@@ -35,6 +35,8 @@ const int b = B / 2;
 
 struct mtree *ciaccia_patella(std::vector<struct point*> set);
 
+struct mtree* sexton_swinbank(std::vector<struct point*> C_in);
+
 std::vector<struct point*> generate_points(double n);
 
 #endif

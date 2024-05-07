@@ -9,7 +9,7 @@
 #define B B
 #define b b
 
-Point* medoid(std::vector<Point*> cluster){
+Point* medoid(std::vector<Point*> cluster){// O(n*n)
     int med;
     
     if(cluster.size() == 1){
@@ -150,21 +150,122 @@ std::vector<std::vector<Point*>> cluster(std::vector<Point*> C_in){
 
         C_out.push_back(c);
 
-        free(&c_);
-
     }
     else{
+        for(int i = 0; i < c_.size(); i++){
 
-        // for(int i = 0; i < c.size(); i++){
+            c.push_back(c_[0]);
 
-        //     for()
+        }
 
-        // }
+
+
+
+        std::vector<std::vector<Point*>> c1, c2;
+        std::vector<double> d;
+
+
+        for(int i = 0; i < c.size() + c_.size(); i++){
+
+            for(int j = 0; j < c.size() + c_.size(); j++){
+
+                std::vector<Point*> c_cpy(c.size());
+                std::vector<Point*> c1_, c2_;
+
+
+                for(int k = 0; k < c.size(); k++){
+
+                    c_cpy[k] = c[k];
+
+                }
+
+
+                c1_.push_back(c_cpy[i]);
+                c_cpy.erase(c_cpy.begin() + i -1);
+
+                c2_.push_back(c_cpy[j]);
+                c_cpy.erase(c_cpy.begin() + j -1);
+
+
+                int k = 0;
+                double min_c1, min_c2;
+                while(c_cpy.size()){
+                    k = (k+1)%2;
+
+                    int idx;
+
+                    if(k){
+                        min_c1 = DBL_MAX;
+
+
+                        for(int h = 0; h < c_cpy.size(); h++){
+
+                            double d = dist(c[i], c_cpy[h]);
+
+                            if(d < min_c1){
+
+                                min_c1 = d;
+                                idx = h;
+
+                            }
+
+                        }
+
+                        c1_.push_back(c_cpy[idx]);
+
+                    }
+                    else{
+                        min_c2 = DBL_MAX;
+
+                        for(int h = 0; h < c_cpy.size(); h++){
+
+                            double d = dist(c[j], c_cpy[h]);
+
+                            if(d < min_c2){
+
+                                min_c2 = d;
+                                idx = h;
+
+                            }
+
+                        }
+
+                        c2_.push_back(c_cpy[idx]);
+
+
+                    }
+
+                    c_cpy.erase(c_cpy.begin() + idx - 1);
+
+                }
+
+                d.push_back(min_c1 > min_c2 ? min_c1 : min_c2); 
+                c1.push_back(c1_);
+                c2.push_back(c2_);
+
+            }
+
+        }
+
+        double min = d[0];
+        int idx = 0;
+
+        for(int i = 1; i < d.size(); i++){
+
+            if(min > d[i]){
+
+                min = d[i];
+                idx = i;
+
+            }
+
+        }
+
+        C_out.push_back(c1[idx]);
+        C_out.push_back(c2[idx]);
         
-
     }
 
-    // MINMAX POLICY
 
     return C_out;
 
@@ -217,7 +318,7 @@ Entry* Output(std::vector<Entry*> C_mra){
 }
 
 
-struct mtree* sexton_swinbank(std::vector<Point*> C_in){
+struct mtree* sexton_swinbank(std::vector<struct point*> C_in){
 
     if(C_in.size() <= B){
 
