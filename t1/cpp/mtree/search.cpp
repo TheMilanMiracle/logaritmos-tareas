@@ -1,19 +1,33 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <vector>
+#include <iostream>
+
 #include "./mtree.h"
+
+
+long int simulated_reads;
+
 
 void searchTreeRec(struct mtree *t, struct point *q, double r, std::vector<struct point*> *points){
 
+    simulated_reads++;
+
     Node *root = t->entry->a;
 
-    if(t->entry->a->entries[0]->a == NULL){
+    std::cout << t->entry->c_r << std::endl;
 
-        int n = root->entries.size();
+    std::cout << t->entry->a->entries << std::endl;
+
+    if((*t->entry->a->entries)[0]->a == NULL){
+        std::cout << "if" << std::endl;
+
+
+        int n = (*root->entries).size();
 
         for(int i = 0; i < n; i++){
 
-            Point *p = root->entries[i]->p;
+            Point *p = (*root->entries)[i]->p;
             
             if(dist(p, q) <= r){
 
@@ -24,12 +38,12 @@ void searchTreeRec(struct mtree *t, struct point *q, double r, std::vector<struc
         }
 
     }
-
     else{
+        std::cout << "if" << std::endl;
 
-        int n = root->entries.size();
+        int n = (*root->entries).size();
 
-        std::vector<Entry*> entries = root->entries;
+        std::vector<Entry*> entries = (*root->entries);
 
         for(int i = 0; i < n; i++){
             
@@ -47,14 +61,22 @@ void searchTreeRec(struct mtree *t, struct point *q, double r, std::vector<struc
 }
 
 
-std::vector<struct point*> searchTree(struct mtree* t, struct point*q, double r){
+std::vector<struct point*> *searchTree(struct mtree* t, struct point*q, double r){
 
-    std::vector<Point*> points;
+    simulated_reads = 0;
 
-    Node *root = t->entry->a;
-    
-    searchTreeRec(t, q, r, &points);
+    std::cout << t->entry->a->entries->size() << std::endl;
+
+    std::vector<Point*> *points = new std::vector<Point*>;
+
+    searchTreeRec(t, q, r, points);
 
     return points;
+
+}
+
+long int get_simulated_reads(){
+
+    return simulated_reads;
 
 }
