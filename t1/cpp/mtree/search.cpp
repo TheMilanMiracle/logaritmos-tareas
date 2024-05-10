@@ -15,12 +15,12 @@ void searchTreeRec(struct mtree *t, struct point *q, double r, std::vector<struc
 
     Node *root = t->entry->a;
 
-    std::cout << t->entry->c_r << std::endl;
+    // std::cout << t->entry->c_r << std::endl;
 
-    std::cout << t->entry->a->entries << std::endl;
+    // std::cout << t->entry->a->entries << std::endl;
 
     if((*t->entry->a->entries)[0]->a == NULL){
-        std::cout << "if" << std::endl;
+        // std::cout << "if" << std::endl;
 
 
         int n = (*root->entries).size();
@@ -39,7 +39,7 @@ void searchTreeRec(struct mtree *t, struct point *q, double r, std::vector<struc
 
     }
     else{
-        std::cout << "if" << std::endl;
+        // std::cout << "if" << std::endl;
 
         int n = (*root->entries).size();
 
@@ -65,7 +65,7 @@ std::vector<struct point*> *searchTree(struct mtree* t, struct point*q, double r
 
     simulated_reads = 0;
 
-    std::cout << t->entry->a->entries->size() << std::endl;
+    // std::cout << t->entry->a->entries->size() << std::endl;
 
     std::vector<Point*> *points = new std::vector<Point*>;
 

@@ -13,17 +13,65 @@
 #define b b
 
 
+void listMTreeRec(MTree *t, std::vector<Entry*> *Entries){
 
+    Node *root = t->entry->a;
+
+    if((*t->entry->a->entries)[0]->a == NULL){
+        // std::cout << "if" << std::endl;
+
+        int n = (*root->entries).size();
+
+        // std::cout << "if -- "<<n << std::endl;
+
+
+        for(int i = 0; i < n; i++){
+
+            Entries->push_back((*t->entry->a->entries)[i]);
+
+        }
+
+        // std::cout << Entries->size() << std::endl;
+
+    }
+    else{
+        // std::cout << "else" << std::endl;
+
+
+        int n = (*root->entries).size();
+
+        std::vector<Entry*> entries = (*root->entries);
+
+        for(int i = 0; i < n; i++){
+            
+            Entry *entry = entries[i];
+
+            listMTreeRec(newMTree(entry), Entries);
+
+        }
+
+    }
+}
+
+std::vector<Entry*> *listMTree(MTree *t){
+
+    std::vector<Entry*> *ret = new std::vector<Entry*>;
+
+    listMTreeRec(t, ret);
+
+    // std::cout << "antes de salrir" << ret->size() << std::endl;
+ 
+    return ret;
+
+}
 
 struct mtree *ciaccia_patella(std::vector<struct point*> set){
 
-
     unsigned long int set_size = set.size();
-    std::cout << ">>rec ("<< set_size <<")<<" << std::endl;
-
+    // std::cout << ">>rec ("<< set_size <<")<<" << std::endl;
 
     if(set_size <= B){// paso 1
-        std::cout << ">>caso base " << set_size << "<<" << std::endl;
+        // std::cout << ">>caso base " << set_size << "<<" << std::endl;
 
 
         MTree *sub;
@@ -59,6 +107,9 @@ struct mtree *ciaccia_patella(std::vector<struct point*> set){
     std::vector<std::vector<Point*>> Sets;
 
     while(1){ // paso 2
+
+        std::cout << ">> while <<" << std::endl;
+
 
         int k = std::min(B, (int) std::ceil((double) set.size()/B));
 
@@ -114,22 +165,22 @@ struct mtree *ciaccia_patella(std::vector<struct point*> set){
         
         }
 
-        std::cout << "before" <<F.size() << std::endl;
+        // std::cout << "before" <<F.size() << std::endl;
 
-        std::cout << "[";
+        // std::cout << "[";
 
-        for(int p = 0; p < F.size(); p++){
+        // for(int p = 0; p < F.size(); p++){
 
-            std::cout << F[p].size() - 1 << ", ";
+            // std::cout << F[p].size() - 1 << ", ";
 
-        }
+        // }
 
-        std::cout << "]" << std::endl;
+        // std::cout << "]" << std::endl;
 
 
         for(unsigned long int i = 0; i < F.size(); i++){// paso 4: redistribucion 
 
-            std::cout << "lap = " <<i <<" | size = " << F.size() << std::endl;
+            // std::cout << "lap = " <<i <<" | size = " << F.size() << std::endl;
 
             if(F[i].size() - 1 < b){ // no se cuenta el punto que represeanta la asignacion
 
@@ -169,7 +220,7 @@ struct mtree *ciaccia_patella(std::vector<struct point*> set){
                 // std::cout << "[";
                 // for(int p = 0; p < F.size(); p++){
 
-                //     std::cout << F[p].size() - 1 << ", ";
+                    // std::cout << F[p].size() - 1 << ", ";
 
                 // }
                 // std::cout << "]" << std::endl;
@@ -185,7 +236,7 @@ struct mtree *ciaccia_patella(std::vector<struct point*> set){
                 // std::cout << "[";
                 // for(int p = 0; p < F.size(); p++){
 
-                //     std::cout << F[p].size() - 1 << ", ";
+                    // std::cout << F[p].size() - 1 << ", ";
 
                 // }
                 // std::cout << "]" << std::endl;
@@ -198,15 +249,15 @@ struct mtree *ciaccia_patella(std::vector<struct point*> set){
 
         }
 
-        std::cout << "[";
+        // std::cout << "[";
 
-        for(int p = 0; p < F.size(); p++){
+        // for(int p = 0; p < F.size(); p++){
 
-            std::cout << F[p].size() - 1 << ", ";
+            // std::cout << F[p].size() - 1 << ", ";
 
-        }
+        // }
 
-        std::cout << "]" << std::endl;
+        // std::cout << "]" << std::endl;
 
         if(F.size() == 1){ // se debe volver al paso 2
 
@@ -226,20 +277,20 @@ struct mtree *ciaccia_patella(std::vector<struct point*> set){
     std::vector<MTree*> Forest(Sets.size());
     std::vector<Point*> Samples(Sets.size());
 
-    std::cout << "[";
+    // std::cout << "[";
 
-    for(int p = 0; p < Sets.size(); p++){
+    // for(int p = 0; p < Sets.size(); p++){
 
-        std::cout << Sets[p].size() - 1 << ", ";
+        // std::cout << Sets[p].size() - 1 << ", ";
 
-    }
+    // }
 
-    std::cout << "]" << std::endl;
+    // std::cout << "]" << std::endl;
     
-    std::cout << "[";
+    // std::cout << "[";
     for(long unsigned int i = 0; i < Sets.size(); i++){ // paso 6, se construyen los subarboles
 
-        std::cout << "-------"<<Sets[i].size() - 1 << "-------";
+        // std::cout << "-------"<<Sets[i].size() - 1 << "-------";
         Samples[i] = Sets[i][0];
 
         Sets[i].erase(Sets[i].begin());
@@ -251,7 +302,7 @@ struct mtree *ciaccia_patella(std::vector<struct point*> set){
         // std::cout << "FOREST[I].SIZE = "<<Forest[i]->entry->a->entries->size() << std::endl;
 
     }
-    std::cout << "]" << std::endl;
+    // std::cout << "]" << std::endl;
 
     std::vector<MTree*> Forest_;
 
@@ -261,28 +312,27 @@ struct mtree *ciaccia_patella(std::vector<struct point*> set){
 
         if(Forest[i]->entry->a->entries->size() < b){ // raiz tamaño menor a b
 
-            for(int p = 0; p < Sets.size(); p++){
+            // std::cout << "[";
 
-                std::cout << Forest[i]->entry->a->entries[p].size() << ", ";
+            // for(int p = 0; p < Sets.size(); p++){
 
-            }
+                // std::cout << Forest[i]->entry->a->entries[p].size() << ", ";
+
+            // }
+            // std::cout << "]" << std::endl;
 
 
             // std::cout << "split" << std::endl;
 
             MTree *tree = Forest[i];
 
-            Forest.erase(Forest.begin() + i); // se borra la raiz
-
-            i--;
-
             for(long unsigned int j = 0; j < tree->entry->a->entries->size(); j++){ // agregar los subarboles
 
                 Entry *subtree_root = (*tree->entry->a->entries)[j];
 
 
-                std::cout << "paso 7 | " << subtree_root->a << std::endl;//0x0
-                std::cout << "paso 7 | " << subtree_root->a->entries->size() << std::endl;//0x0
+                // std::cout << "paso 7 | " << subtree_root->a << std::endl;//0x0
+                // std::cout << "paso 7 | " << subtree_root->a->entries->size() << std::endl;//0x0
 
 
 
@@ -291,6 +341,12 @@ struct mtree *ciaccia_patella(std::vector<struct point*> set){
                 Forest_.push_back(newMTree(subtree_root));
 
             }
+
+            Forest.erase(Forest.begin() + i); // se borra la raiz
+
+            Samples.erase(Samples.begin() + i); // se borra el sample
+
+            i--;
 
         }
 
@@ -303,6 +359,8 @@ struct mtree *ciaccia_patella(std::vector<struct point*> set){
     }
 
     // std::cout << "|FOREST| = " << Forest.size() << std::endl;
+
+    // std::cout << "(Samples, Forest) = ( "<< Samples.size() <<", " << Forest.size() <<")" << std::endl;
 
     //paso 8
 
@@ -331,7 +389,7 @@ struct mtree *ciaccia_patella(std::vector<struct point*> set){
 
             T.push_back(Forest[i]);
 
-            std::cout << "paso 9 | if  | " << Forest[i]->entry->a << std::endl;//0x0
+            // std::cout << "paso 9 | if  | " << Forest[i]->entry->a << std::endl;//0x0
 
         }
         else{
@@ -343,7 +401,7 @@ struct mtree *ciaccia_patella(std::vector<struct point*> set){
 
                 int h_ = get_heigth(Forest[j]);
 
-                std::cout << "paso 9 | " << Forest[j]->entry->a << std::endl;//0x0
+                // std::cout << "paso 9 | " << Forest[j]->entry->a << std::endl;//0x0
 
 
                 if(h == h_){
@@ -363,6 +421,8 @@ struct mtree *ciaccia_patella(std::vector<struct point*> set){
 
     }
 
+    
+
     for(unsigned long int i = 0; i < idxs.size(); i++){
 
         Samples.erase(Samples.begin() + idxs[i]);
@@ -376,13 +436,76 @@ struct mtree *ciaccia_patella(std::vector<struct point*> set){
 
 
     MTree *T_sup = ciaccia_patella(Samples);
-    std::cout << "despuesdelarecursionreql" << std::endl;
+    // std::cout << "despuesdelarecursionreql" << std::endl;
 
+
+    // std::cout << "forest size "<< Forest.size() << std::endl;
+    // std::cout << "samples size "<< Samples.size() << std::endl;
     for(long unsigned int t = 0; t < T.size(); t++){
 
-        (*T_sup->entry->a->entries)[t]->a = T[t]->entry->a; //NULL
+        // std::cout << "tsup entries"<<(*T_sup->entry->a->entries).size() << std::endl;
+        // std::cout << "t entries"<<(T).size() << std::endl;
 
-        (*T_sup->entry->a->entries)[t]->p = T[t]->entry->p;
+        // std::cout << "ants" << (*T_sup->entry->a->entries)[t]->a << std::endl;
+
+        if((*T_sup->entry->a->entries)[t]->a == NULL){//nodo externo
+
+            (*T_sup->entry->a->entries)[t]->a = Forest[t]->entry->a;
+
+            (*T_sup->entry->a->entries)[t]->p = Forest[t]->entry->p;
+
+        }
+        else{//nodo interno
+
+            // std::cout << "MATENMECTM (ELSE)" << std::endl;
+
+            std::vector<Entry*> *tree = listMTree(T_sup); // entries en T_sup
+            
+            // std::cout << "listree " << tree->size() << std::endl;
+
+
+            for(unsigned long int i = 0; i < tree->size(); i++){// por cada entry en T_sup
+                // std::cout << "(ELSE) for" << std::endl;
+
+                Entry *current = (*tree)[i];// la actual entry de T_sup
+
+                for(unsigned long int j = 0; j < Forest.size(); j++){// se busca su asignación en Forest
+
+                    // std::cout << "search " << searchTree(Forest[j], current->p, 0)->size() << std::endl;
+
+                    if(searchTree(Forest[j], current->p, 0)->size() > 0){ // si es que la actual entry se encuentra en el arbol
+
+                        for(int h = 0; h < Forest[j]->entry->a->entries->size(); h++){
+
+                            // std::cout << "(" << (*Forest[j]->entry->a->entries)[h]->p->x<<"," << (*Forest[j]->entry->a->entries)[h]->p->y<<"), ";
+
+                        }
+                        // std::cout << std::endl;
+
+                        // std::cout << "found " << (*searchTree(Forest[j], current->p, 0))[0]->x << ","<< (*searchTree(Forest[j], current->p, 0))[0]->y<< std::endl;
+                        // std::cout << "found " << current->p->x << ","<< current->p->y << std::endl;
+
+                        current->a = Forest[j]->entry->a; // se conecta
+
+                        current->c_r = Forest[j]->entry->c_r; // se conecta
+
+                        current->p = Forest[j]->entry->p; // se conecta
+
+                        Forest.erase(Forest.begin() + j); // se elimina
+
+                        break;
+
+                    }
+
+                }
+
+            }
+
+            break;
+
+        }
+
+
 
     }
 
@@ -407,7 +530,7 @@ struct mtree *ciaccia_patella(std::vector<struct point*> set){
 
     }
 
-    std::cout << ">>return<<" << std::endl;
+    // std::cout << ">>return<<" << std::endl;
 
     return T_sup;
 }

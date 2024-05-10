@@ -9,12 +9,13 @@
 #include <unistd.h>    
 #include "./mtree/mtree.h"
 
+#include <random>
+
 std::ofstream results_file("./cp_results/results.txt");
 
 std::chrono::time_point<std::chrono::system_clock> start, ref;
 
-std::vector<double> S = {std::pow(2, 9)};
-
+std::vector<int> S = {21};
 std::string elapsed_time(std::chrono::time_point<std::chrono::system_clock> from){
 
     std::chrono::duration<double> time = std::chrono::system_clock::now() - start;
@@ -64,6 +65,8 @@ void main_out(){
     results_file << "> main finished after " << elapsed_time(start) << std::endl; 
 
     std::cout << "> main finished after " << elapsed_time(start) << std::endl; 
+
+    results_file.close();
     
 }
 
@@ -71,6 +74,10 @@ void main_out(){
 int main(){
     main_in();
 
+    
+    std::cout << RAND_MAX << std::endl;
+
+    return 0;
 
     for(unsigned long int i = 0; i < S.size(); i++){
     
@@ -80,17 +87,21 @@ int main(){
 
 
         ref = std::chrono::system_clock::now();
-        std::vector<Point*> P = generate_points(S[i]);
+        std::vector<Point*> P = generate_points(std::pow(2,S[i]));
         results_file << "> created " << (int)S[i] << " random points in " << elapsed_time(ref) << ".\n";
 
 
         ref = std::chrono::system_clock::now();
         // MTree* A = sexton_swinbank(P);
         MTree* A = ciaccia_patella(P);
+
+        std::cout << "H = "<< get_heigth(A) << std::endl;
+
         results_file << "> created a mtree with " << (int)S[i] << " random points in " << elapsed_time(ref) << ".\n";
 
         std::vector<Point*> Q = generate_points(100);
         double r = 0.02;
+        // double r = 5;
 
         long int sum = 0;
         long int io = 0;
@@ -113,9 +124,6 @@ int main(){
 
         results_file << "\n\n";
     }
-
-    results_file.close();
-
 
     main_out();
 }

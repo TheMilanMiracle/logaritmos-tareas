@@ -18,9 +18,9 @@ main:
 	rm ./bin
 
 main-O:
-	g++ -O3 ./main.cpp ${DEP} -o ./bin14
-	./bin14
-
+	g++ -O3 ./main.cpp ${DEP} -o ./bin
+	./bin
+	rm ./bin
 
 
 debug:
@@ -35,7 +35,7 @@ val:
 
 gdb:
 	clear
-	g++ ./main.cpp ${DEP} -g -D_GLIBCXX_DEBUG -o ./bin
+	g++ -O3 ./main.cpp ${DEP} -g -D_GLIBCXX_DEBUG -o ./bin
 	gdb ./bin
 	rm ./bin
 
