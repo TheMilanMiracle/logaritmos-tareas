@@ -1,0 +1,111 @@
+=====================================================================
+testing with 1024 points.
+
+> created 1024 random points in 0.000060 seconds.
+> created a mtree with 1024 random points in 29.629960 seconds with height 2.
+> found 2/1024 points with Q:(0.213108, 0.0358333) and r=0.02 | I/O = 7 | in 0.000019 seconds.
+> found 0/1024 points with Q:(0.923157, 0.393221) and r=0.02 | I/O = 8 | in 0.000005 seconds.
+> found 4/1024 points with Q:(0.806092, 0.73041) and r=0.02 | I/O = 8 | in 0.000005 seconds.
+> found 0/1024 points with Q:(0.665165, 0.343269) and r=0.02 | I/O = 8 | in 0.000004 seconds.
+> found 1/1024 points with Q:(0.0053414, 0.861658) and r=0.02 | I/O = 7 | in 0.000004 seconds.
+> found 2/1024 points with Q:(0.861103, 0.60472) and r=0.02 | I/O = 8 | in 0.000004 seconds.
+> found 2/1024 points with Q:(0.990134, 0.163709) and r=0.02 | I/O = 7 | in 0.000004 seconds.
+> found 1/1024 points with Q:(0.335419, 0.613674) and r=0.02 | I/O = 8 | in 0.000004 seconds.
+> found 0/1024 points with Q:(0.434804, 0.147823) and r=0.02 | I/O = 7 | in 0.000004 seconds.
+> found 4/1024 points with Q:(0.106595, 0.0957499) and r=0.02 | I/O = 7 | in 0.000004 seconds.
+> found 1/1024 points with Q:(0.617826, 0.305786) and r=0.02 | I/O = 8 | in 0.000004 seconds.
+> found 2/1024 points with Q:(0.00508019, 0.0341334) and r=0.02 | I/O = 7 | in 0.000004 seconds.
+> found 0/1024 points with Q:(0.634835, 0.111818) and r=0.02 | I/O = 7 | in 0.000004 seconds.
+> found 1/1024 points with Q:(0.29097, 0.562966) and r=0.02 | I/O = 8 | in 0.000004 seconds.
+> found 1/1024 points with Q:(0.738489, 0.707837) and r=0.02 | I/O = 8 | in 0.000004 seconds.
+> found 2/1024 points with Q:(0.74367, 0.412327) and r=0.02 | I/O = 8 | in 0.000004 seconds.
+> found 2/1024 points with Q:(0.805548, 0.951597) and r=0.02 | I/O = 7 | in 0.000004 seconds.
+> found 3/1024 points with Q:(0.682007, 0.666827) and r=0.02 | I/O = 8 | in 0.000004 seconds.
+> found 1/1024 points with Q:(0.0100958, 0.61164) and r=0.02 | I/O = 7 | in 0.000004 seconds.
+> found 1/1024 points with Q:(0.473298, 0.347172) and r=0.02 | I/O = 8 | in 0.000004 seconds.
+> found 0/1024 points with Q:(0.951891, 0.0154372) and r=0.02 | I/O = 7 | in 0.000004 seconds.
+> found 3/1024 points with Q:(0.179146, 0.334401) and r=0.02 | I/O = 7 | in 0.000004 seconds.
+> found 0/1024 points with Q:(0.948075, 0.942025) and r=0.02 | I/O = 7 | in 0.000004 seconds.
+> found 2/1024 points with Q:(0.0898485, 0.514566) and r=0.02 | I/O = 7 | in 0.000004 seconds.
+> found 0/1024 points with Q:(0.610316, 0.382878) and r=0.02 | I/O = 8 | in 0.000004 seconds.
+> found 1/1024 points with Q:(0.688664, 0.196444) and r=0.02 | I/O = 7 | in 0.000004 seconds.
+> found 0/1024 points with Q:(0.230577, 0.228141) and r=0.02 | I/O = 7 | in 0.000004 seconds.
+> found 3/1024 points with Q:(0.339959, 0.693744) and r=0.02 | I/O = 8 | in 0.000004 seconds.
+> found 0/1024 points with Q:(0.25671, 0.865412) and r=0.02 | I/O = 8 | in 0.000004 seconds.
+> found 0/1024 points with Q:(0.573249, 0.630929) and r=0.02 | I/O = 8 | in 0.000004 seconds.
+> found 0/1024 points with Q:(0.0432553, 0.995199) and r=0.02 | I/O = 8 | in 0.000004 seconds.
+> found 0/1024 points with Q:(0.946796, 0.316919) and r=0.02 | I/O = 7 | in 0.000004 seconds.
+> found 0/1024 points with Q:(0.983746, 0.848803) and r=0.02 | I/O = 7 | in 0.000004 seconds.
+> found 0/1024 points with Q:(0.460444, 0.628802) and r=0.02 | I/O = 8 | in 0.000004 seconds.
+> found 0/1024 points with Q:(0.975974, 0.993842) and r=0.02 | I/O = 5 | in 0.000003 seconds.
+> found 0/1024 points with Q:(0.00927921, 0.933741) and r=0.02 | I/O = 7 | in 0.000004 seconds.
+> found 3/1024 points with Q:(0.268142, 0.927865) and r=0.02 | I/O = 8 | in 0.000004 seconds.
+> found 0/1024 points with Q:(0.869891, 0.188426) and r=0.02 | I/O = 7 | in 0.000004 seconds.
+> found 0/1024 points with Q:(0.702992, 0.216217) and r=0.02 | I/O = 7 | in 0.000006 seconds.
+> found 0/1024 points with Q:(0.599095, 0.959739) and r=0.02 | I/O = 8 | in 0.000004 seconds.
+> found 1/1024 points with Q:(0.156183, 0.313308) and r=0.02 | I/O = 7 | in 0.000004 seconds.
+> found 0/1024 points with Q:(0.541449, 0.287759) and r=0.02 | I/O = 7 | in 0.000004 seconds.
+> found 1/1024 points with Q:(0.981504, 0.38676) and r=0.02 | I/O = 8 | in 0.000004 seconds.
+> found 1/1024 points with Q:(0.252172, 0.881408) and r=0.02 | I/O = 8 | in 0.000004 seconds.
+> found 1/1024 points with Q:(0.512337, 0.238214) and r=0.02 | I/O = 7 | in 0.000004 seconds.
+> found 1/1024 points with Q:(0.233412, 0.825421) and r=0.02 | I/O = 8 | in 0.000004 seconds.
+> found 2/1024 points with Q:(0.14234, 0.555592) and r=0.02 | I/O = 7 | in 0.000004 seconds.
+> found 0/1024 points with Q:(0.404395, 0.180208) and r=0.02 | I/O = 7 | in 0.000004 seconds.
+> found 1/1024 points with Q:(0.80901, 0.126087) and r=0.02 | I/O = 7 | in 0.000004 seconds.
+> found 3/1024 points with Q:(0.119929, 0.864839) and r=0.02 | I/O = 8 | in 0.000004 seconds.
+> found 3/1024 points with Q:(0.79858, 0.784984) and r=0.02 | I/O = 8 | in 0.000004 seconds.
+> found 0/1024 points with Q:(0.712849, 0.129208) and r=0.02 | I/O = 7 | in 0.000004 seconds.
+> found 0/1024 points with Q:(0.317634, 0.0667228) and r=0.02 | I/O = 7 | in 0.000004 seconds.
+> found 3/1024 points with Q:(0.28294, 0.58274) and r=0.02 | I/O = 8 | in 0.000004 seconds.
+> found 1/1024 points with Q:(0.542479, 0.0206252) and r=0.02 | I/O = 7 | in 0.000004 seconds.
+> found 1/1024 points with Q:(0.333933, 0.882035) and r=0.02 | I/O = 8 | in 0.000004 seconds.
+> found 0/1024 points with Q:(0.169794, 0.698662) and r=0.02 | I/O = 8 | in 0.000004 seconds.
+> found 1/1024 points with Q:(0.0854216, 0.875382) and r=0.02 | I/O = 8 | in 0.000004 seconds.
+> found 2/1024 points with Q:(0.75679, 0.151298) and r=0.02 | I/O = 7 | in 0.000004 seconds.
+> found 1/1024 points with Q:(0.389512, 0.337594) and r=0.02 | I/O = 7 | in 0.000004 seconds.
+> found 0/1024 points with Q:(0.163015, 0.269126) and r=0.02 | I/O = 7 | in 0.000004 seconds.
+> found 0/1024 points with Q:(0.824718, 0.622924) and r=0.02 | I/O = 8 | in 0.000004 seconds.
+> found 0/1024 points with Q:(0.803132, 0.305355) and r=0.02 | I/O = 8 | in 0.000004 seconds.
+> found 2/1024 points with Q:(0.431441, 0.229114) and r=0.02 | I/O = 7 | in 0.000004 seconds.
+> found 1/1024 points with Q:(0.0939526, 0.612142) and r=0.02 | I/O = 7 | in 0.000004 seconds.
+> found 3/1024 points with Q:(0.397126, 0.55137) and r=0.02 | I/O = 8 | in 0.000004 seconds.
+> found 1/1024 points with Q:(0.680578, 0.892533) and r=0.02 | I/O = 8 | in 0.000004 seconds.
+> found 0/1024 points with Q:(0.959256, 0.109976) and r=0.02 | I/O = 7 | in 0.000004 seconds.
+> found 2/1024 points with Q:(0.692716, 0.998211) and r=0.02 | I/O = 7 | in 0.000004 seconds.
+> found 1/1024 points with Q:(0.0188366, 0.242195) and r=0.02 | I/O = 7 | in 0.000004 seconds.
+> found 2/1024 points with Q:(0.12423, 0.235195) and r=0.02 | I/O = 7 | in 0.000004 seconds.
+> found 1/1024 points with Q:(0.933857, 0.352769) and r=0.02 | I/O = 8 | in 0.000004 seconds.
+> found 0/1024 points with Q:(0.228151, 0.294025) and r=0.02 | I/O = 7 | in 0.000004 seconds.
+> found 2/1024 points with Q:(0.445323, 0.0192785) and r=0.02 | I/O = 7 | in 0.000004 seconds.
+> found 1/1024 points with Q:(0.356872, 0.984941) and r=0.02 | I/O = 8 | in 0.000004 seconds.
+> found 2/1024 points with Q:(0.254067, 0.834834) and r=0.02 | I/O = 8 | in 0.000004 seconds.
+> found 0/1024 points with Q:(0.457758, 0.519887) and r=0.02 | I/O = 8 | in 0.000004 seconds.
+> found 0/1024 points with Q:(0.825241, 0.0787855) and r=0.02 | I/O = 7 | in 0.000004 seconds.
+> found 1/1024 points with Q:(0.307899, 0.26089) and r=0.02 | I/O = 7 | in 0.000004 seconds.
+> found 1/1024 points with Q:(0.873032, 0.256683) and r=0.02 | I/O = 7 | in 0.000004 seconds.
+> found 3/1024 points with Q:(0.808053, 0.401852) and r=0.02 | I/O = 8 | in 0.000004 seconds.
+> found 2/1024 points with Q:(0.294385, 0.270159) and r=0.02 | I/O = 7 | in 0.000004 seconds.
+> found 0/1024 points with Q:(0.380134, 0.488631) and r=0.02 | I/O = 8 | in 0.000004 seconds.
+> found 0/1024 points with Q:(0.486842, 0.25364) and r=0.02 | I/O = 7 | in 0.000004 seconds.
+> found 1/1024 points with Q:(0.495836, 0.0728501) and r=0.02 | I/O = 7 | in 0.000038 seconds.
+> found 0/1024 points with Q:(0.308045, 0.505679) and r=0.02 | I/O = 8 | in 0.000005 seconds.
+> found 2/1024 points with Q:(0.858448, 0.620066) and r=0.02 | I/O = 8 | in 0.000004 seconds.
+> found 1/1024 points with Q:(0.914091, 0.241902) and r=0.02 | I/O = 7 | in 0.000004 seconds.
+> found 2/1024 points with Q:(0.261181, 0.0865995) and r=0.02 | I/O = 7 | in 0.000004 seconds.
+> found 1/1024 points with Q:(0.0715402, 0.359414) and r=0.02 | I/O = 7 | in 0.000004 seconds.
+> found 3/1024 points with Q:(0.194248, 0.618053) and r=0.02 | I/O = 8 | in 0.000004 seconds.
+> found 0/1024 points with Q:(0.137939, 0.325607) and r=0.02 | I/O = 7 | in 0.000004 seconds.
+> found 1/1024 points with Q:(0.404393, 0.652006) and r=0.02 | I/O = 8 | in 0.000004 seconds.
+> found 3/1024 points with Q:(0.912896, 0.963181) and r=0.02 | I/O = 7 | in 0.000004 seconds.
+> found 3/1024 points with Q:(0.219864, 0.712292) and r=0.02 | I/O = 8 | in 0.000004 seconds.
+> found 2/1024 points with Q:(0.114144, 0.785929) and r=0.02 | I/O = 8 | in 0.000004 seconds.
+> found 1/1024 points with Q:(0.0560873, 0.0279167) and r=0.02 | I/O = 7 | in 0.000004 seconds.
+> found 0/1024 points with Q:(0.516548, 0.408529) and r=0.02 | I/O = 8 | in 0.000004 seconds.
+> found 0/1024 points with Q:(0.662169, 0.436222) and r=0.02 | I/O = 8 | in 0.000004 seconds.
+> found 1/1024 points with Q:(0.509072, 0.00339002) and r=0.02 | I/O = 7 | in 0.000004 seconds.
+
+percentage of foundness 0.108398% | avg I/O: 7.44
+
+
+
+> main finished after 29.630540 seconds
