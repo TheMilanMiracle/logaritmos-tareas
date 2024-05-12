@@ -1,0 +1,110 @@
+=====================================================================
+testing with 16384 points.
+
+> created 16384 random points in 0.000958 seconds.
+> created a mtree with 16384 random points in 0.016756 seconds with height 3.
+> found 22/16384 points with Q:(0.89955, 0.615507) and r=0.02 | I/O = 9 | in 0.000034 seconds.
+> found 20/16384 points with Q:(0.647195, 0.0456925) and r=0.02 | I/O = 5 | in 0.000009 seconds.
+> found 19/16384 points with Q:(0.667543, 0.38889) and r=0.02 | I/O = 4 | in 0.000008 seconds.
+> found 18/16384 points with Q:(0.436159, 0.0792306) and r=0.02 | I/O = 10 | in 0.000015 seconds.
+> found 20/16384 points with Q:(0.203702, 0.140006) and r=0.02 | I/O = 7 | in 0.000010 seconds.
+> found 22/16384 points with Q:(0.352146, 0.752514) and r=0.02 | I/O = 8 | in 0.000013 seconds.
+> found 18/16384 points with Q:(0.117044, 0.52191) and r=0.02 | I/O = 7 | in 0.000011 seconds.
+> found 21/16384 points with Q:(0.726352, 0.180888) and r=0.02 | I/O = 9 | in 0.000014 seconds.
+> found 21/16384 points with Q:(0.634397, 0.789153) and r=0.02 | I/O = 7 | in 0.000009 seconds.
+> found 25/16384 points with Q:(0.883035, 0.897248) and r=0.02 | I/O = 10 | in 0.000013 seconds.
+> found 17/16384 points with Q:(0.731317, 0.733525) and r=0.02 | I/O = 9 | in 0.000008 seconds.
+> found 23/16384 points with Q:(0.425168, 0.30701) and r=0.02 | I/O = 6 | in 0.000007 seconds.
+> found 19/16384 points with Q:(0.814187, 0.270947) and r=0.02 | I/O = 9 | in 0.000009 seconds.
+> found 22/16384 points with Q:(0.609984, 0.534077) and r=0.02 | I/O = 5 | in 0.000006 seconds.
+> found 20/16384 points with Q:(0.30589, 0.022979) and r=0.02 | I/O = 5 | in 0.000005 seconds.
+> found 15/16384 points with Q:(0.638486, 0.511269) and r=0.02 | I/O = 5 | in 0.000005 seconds.
+> found 17/16384 points with Q:(0.556961, 0.20544) and r=0.02 | I/O = 7 | in 0.000009 seconds.
+> found 26/16384 points with Q:(0.59433, 0.285681) and r=0.02 | I/O = 6 | in 0.000006 seconds.
+> found 39/16384 points with Q:(0.364911, 0.224504) and r=0.02 | I/O = 7 | in 0.000006 seconds.
+> found 20/16384 points with Q:(0.36451, 0.0304894) and r=0.02 | I/O = 6 | in 0.000005 seconds.
+> found 20/16384 points with Q:(0.783003, 0.568613) and r=0.02 | I/O = 7 | in 0.000006 seconds.
+> found 19/16384 points with Q:(0.0905231, 0.716656) and r=0.02 | I/O = 6 | in 0.000008 seconds.
+> found 24/16384 points with Q:(0.897544, 0.900047) and r=0.02 | I/O = 9 | in 0.000007 seconds.
+> found 21/16384 points with Q:(0.689199, 0.816875) and r=0.02 | I/O = 7 | in 0.000006 seconds.
+> found 14/16384 points with Q:(0.714123, 0.531941) and r=0.02 | I/O = 7 | in 0.000007 seconds.
+> found 22/16384 points with Q:(0.265466, 0.572234) and r=0.02 | I/O = 9 | in 0.000010 seconds.
+> found 25/16384 points with Q:(0.879244, 0.44544) and r=0.02 | I/O = 8 | in 0.000008 seconds.
+> found 20/16384 points with Q:(0.716387, 0.690634) and r=0.02 | I/O = 8 | in 0.000006 seconds.
+> found 21/16384 points with Q:(0.224711, 0.693431) and r=0.02 | I/O = 8 | in 0.000007 seconds.
+> found 20/16384 points with Q:(0.71641, 0.326371) and r=0.02 | I/O = 8 | in 0.000007 seconds.
+> found 19/16384 points with Q:(0.83764, 0.530601) and r=0.02 | I/O = 9 | in 0.000007 seconds.
+> found 20/16384 points with Q:(0.736041, 0.354896) and r=0.02 | I/O = 5 | in 0.000005 seconds.
+> found 13/16384 points with Q:(0.640577, 0.394601) and r=0.02 | I/O = 5 | in 0.000005 seconds.
+> found 28/16384 points with Q:(0.619105, 0.330371) and r=0.02 | I/O = 5 | in 0.000005 seconds.
+> found 14/16384 points with Q:(0.36086, 0.00548836) and r=0.02 | I/O = 5 | in 0.000005 seconds.
+> found 18/16384 points with Q:(0.574102, 0.983615) and r=0.02 | I/O = 4 | in 0.000007 seconds.
+> found 19/16384 points with Q:(0.700271, 0.143863) and r=0.02 | I/O = 9 | in 0.000007 seconds.
+> found 20/16384 points with Q:(0.04391, 0.664625) and r=0.02 | I/O = 5 | in 0.000005 seconds.
+> found 26/16384 points with Q:(0.4815, 0.597815) and r=0.02 | I/O = 9 | in 0.000009 seconds.
+> found 17/16384 points with Q:(0.129756, 0.73311) and r=0.02 | I/O = 5 | in 0.000005 seconds.
+> found 18/16384 points with Q:(0.305344, 0.195623) and r=0.02 | I/O = 7 | in 0.000006 seconds.
+> found 14/16384 points with Q:(0.641064, 0.395222) and r=0.02 | I/O = 5 | in 0.000005 seconds.
+> found 17/16384 points with Q:(0.0858564, 0.184588) and r=0.02 | I/O = 7 | in 0.000007 seconds.
+> found 28/16384 points with Q:(0.878019, 0.35745) and r=0.02 | I/O = 6 | in 0.000006 seconds.
+> found 26/16384 points with Q:(0.683821, 0.310568) and r=0.02 | I/O = 7 | in 0.000010 seconds.
+> found 13/16384 points with Q:(0.841169, 0.594429) and r=0.02 | I/O = 7 | in 0.000006 seconds.
+> found 22/16384 points with Q:(0.949325, 0.521461) and r=0.02 | I/O = 5 | in 0.000004 seconds.
+> found 23/16384 points with Q:(0.916062, 0.57721) and r=0.02 | I/O = 7 | in 0.000005 seconds.
+> found 28/16384 points with Q:(0.90758, 0.589902) and r=0.02 | I/O = 8 | in 0.000006 seconds.
+> found 22/16384 points with Q:(0.59539, 0.535168) and r=0.02 | I/O = 5 | in 0.000005 seconds.
+> found 14/16384 points with Q:(0.518783, 0.268441) and r=0.02 | I/O = 5 | in 0.000005 seconds.
+> found 19/16384 points with Q:(0.412304, 0.169492) and r=0.02 | I/O = 7 | in 0.000006 seconds.
+> found 15/16384 points with Q:(0.834117, 0.219054) and r=0.02 | I/O = 11 | in 0.000011 seconds.
+> found 21/16384 points with Q:(0.81687, 0.456214) and r=0.02 | I/O = 7 | in 0.000006 seconds.
+> found 32/16384 points with Q:(0.189323, 0.315617) and r=0.02 | I/O = 6 | in 0.000007 seconds.
+> found 24/16384 points with Q:(0.511241, 0.946626) and r=0.02 | I/O = 6 | in 0.000006 seconds.
+> found 23/16384 points with Q:(0.341848, 0.494667) and r=0.02 | I/O = 8 | in 0.000007 seconds.
+> found 18/16384 points with Q:(0.679255, 0.152305) and r=0.02 | I/O = 8 | in 0.000006 seconds.
+> found 31/16384 points with Q:(0.509755, 0.427705) and r=0.02 | I/O = 7 | in 0.000007 seconds.
+> found 15/16384 points with Q:(0.738273, 0.557274) and r=0.02 | I/O = 8 | in 0.000006 seconds.
+> found 17/16384 points with Q:(0.151703, 0.193576) and r=0.02 | I/O = 6 | in 0.000005 seconds.
+> found 25/16384 points with Q:(0.715037, 0.579441) and r=0.02 | I/O = 7 | in 0.000005 seconds.
+> found 25/16384 points with Q:(0.156651, 0.101028) and r=0.02 | I/O = 9 | in 0.000010 seconds.
+> found 28/16384 points with Q:(0.69093, 0.6311) and r=0.02 | I/O = 9 | in 0.000006 seconds.
+> found 28/16384 points with Q:(0.166267, 0.0642312) and r=0.02 | I/O = 6 | in 0.000005 seconds.
+> found 17/16384 points with Q:(0.332672, 0.28632) and r=0.02 | I/O = 6 | in 0.000005 seconds.
+> found 23/16384 points with Q:(0.455813, 0.685051) and r=0.02 | I/O = 6 | in 0.000006 seconds.
+> found 25/16384 points with Q:(0.904105, 0.744976) and r=0.02 | I/O = 7 | in 0.000006 seconds.
+> found 26/16384 points with Q:(0.20119, 0.28993) and r=0.02 | I/O = 6 | in 0.000005 seconds.
+> found 15/16384 points with Q:(0.605547, 0.720975) and r=0.02 | I/O = 6 | in 0.000005 seconds.
+> found 17/16384 points with Q:(0.667601, 0.390513) and r=0.02 | I/O = 4 | in 0.000006 seconds.
+> found 12/16384 points with Q:(0.88518, 0.116788) and r=0.02 | I/O = 7 | in 0.000006 seconds.
+> found 14/16384 points with Q:(0.269092, 0.00944911) and r=0.02 | I/O = 4 | in 0.000004 seconds.
+> found 16/16384 points with Q:(0.437154, 0.564436) and r=0.02 | I/O = 6 | in 0.000005 seconds.
+> found 20/16384 points with Q:(0.12171, 0.778847) and r=0.02 | I/O = 8 | in 0.000007 seconds.
+> found 29/16384 points with Q:(0.972423, 0.175426) and r=0.02 | I/O = 5 | in 0.000005 seconds.
+> found 21/16384 points with Q:(0.754868, 0.273413) and r=0.02 | I/O = 7 | in 0.000006 seconds.
+> found 18/16384 points with Q:(0.374441, 0.687461) and r=0.02 | I/O = 6 | in 0.000006 seconds.
+> found 24/16384 points with Q:(0.318561, 0.911518) and r=0.02 | I/O = 6 | in 0.000007 seconds.
+> found 24/16384 points with Q:(0.97575, 0.0653705) and r=0.02 | I/O = 6 | in 0.000005 seconds.
+> found 25/16384 points with Q:(0.351691, 0.484828) and r=0.02 | I/O = 8 | in 0.000011 seconds.
+> found 21/16384 points with Q:(0.169879, 0.308421) and r=0.02 | I/O = 5 | in 0.000005 seconds.
+> found 24/16384 points with Q:(0.053397, 0.807503) and r=0.02 | I/O = 7 | in 0.000006 seconds.
+> found 18/16384 points with Q:(0.0974329, 0.0739838) and r=0.02 | I/O = 6 | in 0.000041 seconds.
+> found 25/16384 points with Q:(0.794959, 0.254587) and r=0.02 | I/O = 9 | in 0.000008 seconds.
+> found 28/16384 points with Q:(0.6451, 0.70298) and r=0.02 | I/O = 6 | in 0.000005 seconds.
+> found 21/16384 points with Q:(0.819768, 0.462559) and r=0.02 | I/O = 6 | in 0.000006 seconds.
+> found 16/16384 points with Q:(0.472008, 0.53028) and r=0.02 | I/O = 7 | in 0.000006 seconds.
+> found 19/16384 points with Q:(0.0947158, 0.0888603) and r=0.02 | I/O = 6 | in 0.000006 seconds.
+> found 25/16384 points with Q:(0.867708, 0.909162) and r=0.02 | I/O = 9 | in 0.000010 seconds.
+> found 31/16384 points with Q:(0.0845887, 0.216425) and r=0.02 | I/O = 7 | in 0.000006 seconds.
+> found 20/16384 points with Q:(0.489838, 0.840131) and r=0.02 | I/O = 7 | in 0.000006 seconds.
+> found 27/16384 points with Q:(0.527592, 0.839456) and r=0.02 | I/O = 8 | in 0.000006 seconds.
+> found 21/16384 points with Q:(0.750975, 0.864279) and r=0.02 | I/O = 10 | in 0.000008 seconds.
+> found 22/16384 points with Q:(0.929649, 0.846152) and r=0.02 | I/O = 8 | in 0.000006 seconds.
+> found 26/16384 points with Q:(0.330981, 0.726724) and r=0.02 | I/O = 8 | in 0.000007 seconds.
+> found 29/16384 points with Q:(0.0351455, 0.28134) and r=0.02 | I/O = 6 | in 0.000008 seconds.
+> found 15/16384 points with Q:(0.0888432, 0.500859) and r=0.02 | I/O = 6 | in 0.000007 seconds.
+> found 22/16384 points with Q:(0.574843, 0.0885425) and r=0.02 | I/O = 10 | in 0.000008 seconds.
+> found 18/16384 points with Q:(0.343129, 0.186276) and r=0.02 | I/O = 5 | in 0.000005 seconds.
+
+avg percentage of points found: 0.129639% | avg I/O: 6.87
+
+
+> main finished after 0.019025 seconds

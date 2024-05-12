@@ -1,0 +1,110 @@
+=====================================================================
+testing with 8192 points.
+
+> created 8192 random points in 0.000477 seconds.
+> created a mtree with 8192 random points in 0.005492 seconds with height 3.
+> found 5/8192 points with Q:(0.44047, 0.31304) and r=0.02 | I/O = 5 | in 0.000019 seconds.
+> found 16/8192 points with Q:(0.803666, 0.912172) and r=0.02 | I/O = 5 | in 0.000007 seconds.
+> found 14/8192 points with Q:(0.515536, 0.177928) and r=0.02 | I/O = 5 | in 0.000005 seconds.
+> found 15/8192 points with Q:(0.892723, 0.244375) and r=0.02 | I/O = 5 | in 0.000005 seconds.
+> found 12/8192 points with Q:(0.184568, 0.971491) and r=0.02 | I/O = 4 | in 0.000004 seconds.
+> found 10/8192 points with Q:(0.906137, 0.635111) and r=0.02 | I/O = 6 | in 0.000006 seconds.
+> found 11/8192 points with Q:(0.991162, 0.202551) and r=0.02 | I/O = 3 | in 0.000003 seconds.
+> found 9/8192 points with Q:(0.706384, 0.277629) and r=0.02 | I/O = 6 | in 0.000005 seconds.
+> found 15/8192 points with Q:(0.458273, 0.104248) and r=0.02 | I/O = 6 | in 0.000005 seconds.
+> found 11/8192 points with Q:(0.43406, 0.572975) and r=0.02 | I/O = 11 | in 0.000010 seconds.
+> found 11/8192 points with Q:(0.573505, 0.859177) and r=0.02 | I/O = 6 | in 0.000005 seconds.
+> found 7/8192 points with Q:(0.9644, 0.364847) and r=0.02 | I/O = 4 | in 0.000004 seconds.
+> found 7/8192 points with Q:(0.0523984, 0.00721888) and r=0.02 | I/O = 5 | in 0.000004 seconds.
+> found 6/8192 points with Q:(0.753753, 0.508004) and r=0.02 | I/O = 9 | in 0.000007 seconds.
+> found 15/8192 points with Q:(0.529086, 0.400591) and r=0.02 | I/O = 7 | in 0.000005 seconds.
+> found 15/8192 points with Q:(0.713631, 0.106969) and r=0.02 | I/O = 5 | in 0.000004 seconds.
+> found 11/8192 points with Q:(0.0191409, 0.969556) and r=0.02 | I/O = 2 | in 0.000002 seconds.
+> found 10/8192 points with Q:(0.147484, 0.517297) and r=0.02 | I/O = 10 | in 0.000006 seconds.
+> found 5/8192 points with Q:(0.761672, 0.534677) and r=0.02 | I/O = 8 | in 0.000006 seconds.
+> found 11/8192 points with Q:(0.506168, 0.0402068) and r=0.02 | I/O = 4 | in 0.000004 seconds.
+> found 18/8192 points with Q:(0.675318, 0.94624) and r=0.02 | I/O = 4 | in 0.000004 seconds.
+> found 12/8192 points with Q:(0.148791, 0.412305) and r=0.02 | I/O = 7 | in 0.000005 seconds.
+> found 16/8192 points with Q:(0.689934, 0.66648) and r=0.02 | I/O = 8 | in 0.000006 seconds.
+> found 11/8192 points with Q:(0.770728, 0.855175) and r=0.02 | I/O = 6 | in 0.000008 seconds.
+> found 11/8192 points with Q:(0.42815, 0.148207) and r=0.02 | I/O = 7 | in 0.000006 seconds.
+> found 6/8192 points with Q:(0.00738382, 0.204788) and r=0.02 | I/O = 5 | in 0.000004 seconds.
+> found 10/8192 points with Q:(0.569635, 0.00165431) and r=0.02 | I/O = 4 | in 0.000004 seconds.
+> found 9/8192 points with Q:(0.00887319, 0.971784) and r=0.02 | I/O = 2 | in 0.000002 seconds.
+> found 16/8192 points with Q:(0.479787, 0.622033) and r=0.02 | I/O = 8 | in 0.000006 seconds.
+> found 8/8192 points with Q:(0.0226239, 0.762626) and r=0.02 | I/O = 5 | in 0.000004 seconds.
+> found 8/8192 points with Q:(0.869596, 0.00887334) and r=0.02 | I/O = 4 | in 0.000003 seconds.
+> found 8/8192 points with Q:(0.978429, 0.736255) and r=0.02 | I/O = 5 | in 0.000004 seconds.
+> found 11/8192 points with Q:(0.253552, 0.888737) and r=0.02 | I/O = 5 | in 0.000004 seconds.
+> found 9/8192 points with Q:(0.423414, 0.125913) and r=0.02 | I/O = 6 | in 0.000005 seconds.
+> found 16/8192 points with Q:(0.16612, 0.0152242) and r=0.02 | I/O = 5 | in 0.000004 seconds.
+> found 11/8192 points with Q:(0.961464, 0.929582) and r=0.02 | I/O = 4 | in 0.000003 seconds.
+> found 12/8192 points with Q:(0.341887, 0.841438) and r=0.02 | I/O = 6 | in 0.000005 seconds.
+> found 5/8192 points with Q:(0.507919, 0.110255) and r=0.02 | I/O = 5 | in 0.000006 seconds.
+> found 15/8192 points with Q:(0.96543, 0.031821) and r=0.02 | I/O = 2 | in 0.000003 seconds.
+> found 12/8192 points with Q:(0.180028, 0.278647) and r=0.02 | I/O = 8 | in 0.000007 seconds.
+> found 15/8192 points with Q:(0.483435, 0.393579) and r=0.02 | I/O = 8 | in 0.000006 seconds.
+> found 15/8192 points with Q:(0.395234, 0.187412) and r=0.02 | I/O = 7 | in 0.000005 seconds.
+> found 15/8192 points with Q:(0.159195, 0.0530693) and r=0.02 | I/O = 5 | in 0.000004 seconds.
+> found 6/8192 points with Q:(0.675102, 0.404107) and r=0.02 | I/O = 7 | in 0.000006 seconds.
+> found 13/8192 points with Q:(0.166733, 0.638983) and r=0.02 | I/O = 9 | in 0.000006 seconds.
+> found 8/8192 points with Q:(0.647856, 0.697726) and r=0.02 | I/O = 10 | in 0.000007 seconds.
+> found 11/8192 points with Q:(0.433981, 0.0363291) and r=0.02 | I/O = 5 | in 0.000004 seconds.
+> found 11/8192 points with Q:(0.925066, 0.626286) and r=0.02 | I/O = 6 | in 0.000005 seconds.
+> found 11/8192 points with Q:(0.752199, 0.687533) and r=0.02 | I/O = 6 | in 0.000004 seconds.
+> found 10/8192 points with Q:(0.702757, 0.34848) and r=0.02 | I/O = 6 | in 0.000009 seconds.
+> found 15/8192 points with Q:(0.278062, 0.918319) and r=0.02 | I/O = 5 | in 0.000004 seconds.
+> found 13/8192 points with Q:(0.759757, 0.664221) and r=0.02 | I/O = 5 | in 0.000004 seconds.
+> found 11/8192 points with Q:(0.774476, 0.619949) and r=0.02 | I/O = 5 | in 0.000004 seconds.
+> found 7/8192 points with Q:(0.65177, 0.267676) and r=0.02 | I/O = 7 | in 0.000006 seconds.
+> found 11/8192 points with Q:(0.546323, 0.739906) and r=0.02 | I/O = 6 | in 0.000004 seconds.
+> found 8/8192 points with Q:(0.133485, 0.831798) and r=0.02 | I/O = 7 | in 0.000005 seconds.
+> found 8/8192 points with Q:(0.0192095, 0.0297573) and r=0.02 | I/O = 5 | in 0.000004 seconds.
+> found 16/8192 points with Q:(0.0828266, 0.528719) and r=0.02 | I/O = 7 | in 0.000005 seconds.
+> found 8/8192 points with Q:(0.932826, 0.178405) and r=0.02 | I/O = 5 | in 0.000004 seconds.
+> found 12/8192 points with Q:(0.817388, 0.757929) and r=0.02 | I/O = 6 | in 0.000005 seconds.
+> found 15/8192 points with Q:(0.455655, 0.0995595) and r=0.02 | I/O = 6 | in 0.000005 seconds.
+> found 11/8192 points with Q:(0.135889, 0.465244) and r=0.02 | I/O = 10 | in 0.000006 seconds.
+> found 7/8192 points with Q:(0.0915296, 0.889636) and r=0.02 | I/O = 6 | in 0.000006 seconds.
+> found 13/8192 points with Q:(0.577169, 0.0609544) and r=0.02 | I/O = 5 | in 0.000004 seconds.
+> found 10/8192 points with Q:(0.409434, 0.843729) and r=0.02 | I/O = 5 | in 0.000004 seconds.
+> found 9/8192 points with Q:(0.762048, 0.279926) and r=0.02 | I/O = 6 | in 0.000005 seconds.
+> found 15/8192 points with Q:(0.944148, 0.687496) and r=0.02 | I/O = 3 | in 0.000003 seconds.
+> found 7/8192 points with Q:(0.307444, 0.521805) and r=0.02 | I/O = 8 | in 0.000005 seconds.
+> found 15/8192 points with Q:(0.78948, 0.718624) and r=0.02 | I/O = 5 | in 0.000004 seconds.
+> found 14/8192 points with Q:(0.45853, 0.959214) and r=0.02 | I/O = 4 | in 0.000004 seconds.
+> found 9/8192 points with Q:(0.791011, 0.335803) and r=0.02 | I/O = 7 | in 0.000006 seconds.
+> found 9/8192 points with Q:(0.36556, 0.592015) and r=0.02 | I/O = 8 | in 0.000006 seconds.
+> found 10/8192 points with Q:(0.120734, 0.810221) and r=0.02 | I/O = 7 | in 0.000005 seconds.
+> found 10/8192 points with Q:(0.988626, 0.448387) and r=0.02 | I/O = 3 | in 0.000003 seconds.
+> found 13/8192 points with Q:(0.206316, 0.0535602) and r=0.02 | I/O = 7 | in 0.000005 seconds.
+> found 8/8192 points with Q:(0.15312, 0.806014) and r=0.02 | I/O = 7 | in 0.000007 seconds.
+> found 10/8192 points with Q:(0.271258, 0.661971) and r=0.02 | I/O = 7 | in 0.000005 seconds.
+> found 11/8192 points with Q:(0.551606, 0.289008) and r=0.02 | I/O = 5 | in 0.000004 seconds.
+> found 14/8192 points with Q:(0.349963, 0.362787) and r=0.02 | I/O = 6 | in 0.000004 seconds.
+> found 11/8192 points with Q:(0.206516, 0.128775) and r=0.02 | I/O = 8 | in 0.000006 seconds.
+> found 16/8192 points with Q:(0.408702, 0.759397) and r=0.02 | I/O = 8 | in 0.000006 seconds.
+> found 14/8192 points with Q:(0.446892, 0.968563) and r=0.02 | I/O = 4 | in 0.000008 seconds.
+> found 11/8192 points with Q:(0.490368, 0.352849) and r=0.02 | I/O = 5 | in 0.000004 seconds.
+> found 8/8192 points with Q:(0.0714731, 0.754336) and r=0.02 | I/O = 6 | in 0.000004 seconds.
+> found 9/8192 points with Q:(0.71355, 0.279849) and r=0.02 | I/O = 6 | in 0.000007 seconds.
+> found 10/8192 points with Q:(0.615652, 0.530003) and r=0.02 | I/O = 7 | in 0.000006 seconds.
+> found 4/8192 points with Q:(0.122018, 0.504561) and r=0.02 | I/O = 10 | in 0.000006 seconds.
+> found 8/8192 points with Q:(0.314782, 0.981212) and r=0.02 | I/O = 4 | in 0.000006 seconds.
+> found 8/8192 points with Q:(0.429599, 0.242752) and r=0.02 | I/O = 6 | in 0.000005 seconds.
+> found 15/8192 points with Q:(0.296312, 0.303407) and r=0.02 | I/O = 10 | in 0.000007 seconds.
+> found 17/8192 points with Q:(0.109421, 0.635915) and r=0.02 | I/O = 7 | in 0.000005 seconds.
+> found 13/8192 points with Q:(0.297885, 0.449432) and r=0.02 | I/O = 8 | in 0.000005 seconds.
+> found 9/8192 points with Q:(0.73844, 0.380679) and r=0.02 | I/O = 7 | in 0.000006 seconds.
+> found 9/8192 points with Q:(0.743466, 0.849492) and r=0.02 | I/O = 5 | in 0.000004 seconds.
+> found 13/8192 points with Q:(0.978267, 0.0884027) and r=0.02 | I/O = 3 | in 0.000003 seconds.
+> found 13/8192 points with Q:(0.847799, 0.949982) and r=0.02 | I/O = 3 | in 0.000003 seconds.
+> found 18/8192 points with Q:(0.918545, 0.386969) and r=0.02 | I/O = 4 | in 0.000004 seconds.
+> found 7/8192 points with Q:(0.739818, 0.294691) and r=0.02 | I/O = 6 | in 0.000005 seconds.
+> found 12/8192 points with Q:(0.0490278, 0.408913) and r=0.02 | I/O = 7 | in 0.000005 seconds.
+> found 4/8192 points with Q:(0.688762, 0.811291) and r=0.02 | I/O = 7 | in 0.000005 seconds.
+
+avg percentage of points found: 0.134644% | avg I/O: 5.95
+
+
+> main finished after 0.006788 seconds

@@ -1,0 +1,110 @@
+=====================================================================
+testing with 8388608 points.
+
+> created 8388608 random points in 0.492570 seconds.
+> created a mtree with 8388608 random points in 45.968277 seconds with height 5.
+> found 10664/8388608 points with Q:(0.09627, 0.729024) and r=0.02 | I/O = 152 | in 0.000687 seconds.
+> found 7736/8388608 points with Q:(0.212275, 0.00769973) and r=0.02 | I/O = 104 | in 0.000356 seconds.
+> found 10593/8388608 points with Q:(0.12784, 0.11077) and r=0.02 | I/O = 146 | in 0.000499 seconds.
+> found 10441/8388608 points with Q:(0.706739, 0.647444) and r=0.02 | I/O = 154 | in 0.000478 seconds.
+> found 10434/8388608 points with Q:(0.282677, 0.671017) and r=0.02 | I/O = 150 | in 0.000454 seconds.
+> found 10545/8388608 points with Q:(0.411339, 0.469277) and r=0.02 | I/O = 154 | in 0.000466 seconds.
+> found 10717/8388608 points with Q:(0.606963, 0.255941) and r=0.02 | I/O = 155 | in 0.000476 seconds.
+> found 10551/8388608 points with Q:(0.545954, 0.58502) and r=0.02 | I/O = 149 | in 0.000445 seconds.
+> found 8434/8388608 points with Q:(0.00930055, 0.196504) and r=0.02 | I/O = 115 | in 0.000337 seconds.
+> found 10401/8388608 points with Q:(0.432574, 0.717111) and r=0.02 | I/O = 148 | in 0.000444 seconds.
+> found 10404/8388608 points with Q:(0.635755, 0.0669419) and r=0.02 | I/O = 158 | in 0.000462 seconds.
+> found 10494/8388608 points with Q:(0.0831819, 0.908991) and r=0.02 | I/O = 147 | in 0.000489 seconds.
+> found 10620/8388608 points with Q:(0.504865, 0.65362) and r=0.02 | I/O = 149 | in 0.000449 seconds.
+> found 10453/8388608 points with Q:(0.764425, 0.454187) and r=0.02 | I/O = 155 | in 0.000473 seconds.
+> found 10589/8388608 points with Q:(0.473026, 0.503419) and r=0.02 | I/O = 165 | in 0.000462 seconds.
+> found 10618/8388608 points with Q:(0.232443, 0.973872) and r=0.02 | I/O = 143 | in 0.000435 seconds.
+> found 10429/8388608 points with Q:(0.981572, 0.569296) and r=0.02 | I/O = 145 | in 0.000423 seconds.
+> found 10501/8388608 points with Q:(0.680066, 0.444718) and r=0.02 | I/O = 148 | in 0.000442 seconds.
+> found 10428/8388608 points with Q:(0.0921613, 0.109412) and r=0.02 | I/O = 152 | in 0.000458 seconds.
+> found 10405/8388608 points with Q:(0.780429, 0.386805) and r=0.02 | I/O = 144 | in 0.000443 seconds.
+> found 10544/8388608 points with Q:(0.856082, 0.374839) and r=0.02 | I/O = 156 | in 0.000466 seconds.
+> found 10580/8388608 points with Q:(0.63078, 0.191767) and r=0.02 | I/O = 149 | in 0.000462 seconds.
+> found 10590/8388608 points with Q:(0.776788, 0.463045) and r=0.02 | I/O = 151 | in 0.000455 seconds.
+> found 10579/8388608 points with Q:(0.659549, 0.176734) and r=0.02 | I/O = 151 | in 0.000437 seconds.
+> found 10439/8388608 points with Q:(0.893845, 0.786088) and r=0.02 | I/O = 150 | in 0.000458 seconds.
+> found 10504/8388608 points with Q:(0.85303, 0.0921235) and r=0.02 | I/O = 158 | in 0.000472 seconds.
+> found 5625/8388608 points with Q:(0.00111434, 0.5296) and r=0.02 | I/O = 77 | in 0.000216 seconds.
+> found 10685/8388608 points with Q:(0.18322, 0.936212) and r=0.02 | I/O = 155 | in 0.000489 seconds.
+> found 10746/8388608 points with Q:(0.390399, 0.505979) and r=0.02 | I/O = 159 | in 0.000507 seconds.
+> found 8307/8388608 points with Q:(0.00939761, 0.947644) and r=0.02 | I/O = 107 | in 0.000336 seconds.
+> found 10473/8388608 points with Q:(0.921516, 0.863425) and r=0.02 | I/O = 146 | in 0.000440 seconds.
+> found 10652/8388608 points with Q:(0.432721, 0.24184) and r=0.02 | I/O = 156 | in 0.000478 seconds.
+> found 10693/8388608 points with Q:(0.686558, 0.903088) and r=0.02 | I/O = 153 | in 0.000466 seconds.
+> found 9098/8388608 points with Q:(0.0125004, 0.112788) and r=0.02 | I/O = 120 | in 0.000367 seconds.
+> found 10685/8388608 points with Q:(0.499593, 0.778719) and r=0.02 | I/O = 165 | in 0.000483 seconds.
+> found 10471/8388608 points with Q:(0.153558, 0.792929) and r=0.02 | I/O = 150 | in 0.000457 seconds.
+> found 9816/8388608 points with Q:(0.984696, 0.355675) and r=0.02 | I/O = 132 | in 0.000403 seconds.
+> found 10583/8388608 points with Q:(0.81872, 0.784338) and r=0.02 | I/O = 150 | in 0.000459 seconds.
+> found 10712/8388608 points with Q:(0.961071, 0.761484) and r=0.02 | I/O = 136 | in 0.000434 seconds.
+> found 10631/8388608 points with Q:(0.547572, 0.478269) and r=0.02 | I/O = 158 | in 0.000471 seconds.
+> found 10556/8388608 points with Q:(0.570392, 0.854916) and r=0.02 | I/O = 156 | in 0.000458 seconds.
+> found 10411/8388608 points with Q:(0.384516, 0.400602) and r=0.02 | I/O = 152 | in 0.000453 seconds.
+> found 10392/8388608 points with Q:(0.336814, 0.571507) and r=0.02 | I/O = 150 | in 0.000481 seconds.
+> found 10642/8388608 points with Q:(0.0774859, 0.567735) and r=0.02 | I/O = 155 | in 0.000481 seconds.
+> found 10118/8388608 points with Q:(0.51538, 0.727212) and r=0.02 | I/O = 145 | in 0.000420 seconds.
+> found 10534/8388608 points with Q:(0.590637, 0.0868835) and r=0.02 | I/O = 158 | in 0.000466 seconds.
+> found 10491/8388608 points with Q:(0.328724, 0.436896) and r=0.02 | I/O = 137 | in 0.000432 seconds.
+> found 10481/8388608 points with Q:(0.339985, 0.0233588) and r=0.02 | I/O = 149 | in 0.000450 seconds.
+> found 9949/8388608 points with Q:(0.136146, 0.0152815) and r=0.02 | I/O = 131 | in 0.000399 seconds.
+> found 10538/8388608 points with Q:(0.794001, 0.352485) and r=0.02 | I/O = 151 | in 0.000454 seconds.
+> found 10576/8388608 points with Q:(0.145414, 0.635739) and r=0.02 | I/O = 156 | in 0.000464 seconds.
+> found 8156/8388608 points with Q:(0.991414, 0.947558) and r=0.02 | I/O = 102 | in 0.000278 seconds.
+> found 10550/8388608 points with Q:(0.731896, 0.13011) and r=0.02 | I/O = 154 | in 0.000481 seconds.
+> found 10492/8388608 points with Q:(0.891594, 0.810134) and r=0.02 | I/O = 144 | in 0.000454 seconds.
+> found 10639/8388608 points with Q:(0.288403, 0.692967) and r=0.02 | I/O = 151 | in 0.000446 seconds.
+> found 10560/8388608 points with Q:(0.547883, 0.439165) and r=0.02 | I/O = 158 | in 0.000453 seconds.
+> found 10559/8388608 points with Q:(0.839767, 0.858795) and r=0.02 | I/O = 144 | in 0.000447 seconds.
+> found 10580/8388608 points with Q:(0.430302, 0.932399) and r=0.02 | I/O = 153 | in 0.000481 seconds.
+> found 10518/8388608 points with Q:(0.500134, 0.176581) and r=0.02 | I/O = 151 | in 0.000456 seconds.
+> found 10478/8388608 points with Q:(0.903793, 0.507788) and r=0.02 | I/O = 156 | in 0.000467 seconds.
+> found 9885/8388608 points with Q:(0.594671, 0.015514) and r=0.02 | I/O = 132 | in 0.000404 seconds.
+> found 10511/8388608 points with Q:(0.45241, 0.49443) and r=0.02 | I/O = 164 | in 0.000462 seconds.
+> found 10755/8388608 points with Q:(0.517789, 0.923395) and r=0.02 | I/O = 146 | in 0.000448 seconds.
+> found 10558/8388608 points with Q:(0.938676, 0.792395) and r=0.02 | I/O = 152 | in 0.000466 seconds.
+> found 10563/8388608 points with Q:(0.14488, 0.653936) and r=0.02 | I/O = 154 | in 0.000441 seconds.
+> found 10515/8388608 points with Q:(0.289675, 0.732677) and r=0.02 | I/O = 149 | in 0.000456 seconds.
+> found 10564/8388608 points with Q:(0.680235, 0.290294) and r=0.02 | I/O = 144 | in 0.000433 seconds.
+> found 10439/8388608 points with Q:(0.420404, 0.281089) and r=0.02 | I/O = 156 | in 0.000473 seconds.
+> found 10466/8388608 points with Q:(0.0912224, 0.412131) and r=0.02 | I/O = 152 | in 0.000472 seconds.
+> found 10617/8388608 points with Q:(0.105098, 0.311997) and r=0.02 | I/O = 151 | in 0.000448 seconds.
+> found 10387/8388608 points with Q:(0.751162, 0.379625) and r=0.02 | I/O = 153 | in 0.000486 seconds.
+> found 10626/8388608 points with Q:(0.23842, 0.652981) and r=0.02 | I/O = 159 | in 0.000466 seconds.
+> found 10593/8388608 points with Q:(0.58538, 0.590929) and r=0.02 | I/O = 146 | in 0.000443 seconds.
+> found 10401/8388608 points with Q:(0.76751, 0.668722) and r=0.02 | I/O = 150 | in 0.000448 seconds.
+> found 10605/8388608 points with Q:(0.17651, 0.0855145) and r=0.02 | I/O = 150 | in 0.000453 seconds.
+> found 10698/8388608 points with Q:(0.101029, 0.671303) and r=0.02 | I/O = 153 | in 0.000456 seconds.
+> found 10554/8388608 points with Q:(0.165734, 0.771181) and r=0.02 | I/O = 147 | in 0.000448 seconds.
+> found 10595/8388608 points with Q:(0.694576, 0.553439) and r=0.02 | I/O = 152 | in 0.000492 seconds.
+> found 10498/8388608 points with Q:(0.345833, 0.683523) and r=0.02 | I/O = 162 | in 0.000480 seconds.
+> found 10479/8388608 points with Q:(0.337459, 0.633252) and r=0.02 | I/O = 150 | in 0.000445 seconds.
+> found 10493/8388608 points with Q:(0.365929, 0.490713) and r=0.02 | I/O = 152 | in 0.000452 seconds.
+> found 10420/8388608 points with Q:(0.781007, 0.627134) and r=0.02 | I/O = 153 | in 0.000454 seconds.
+> found 10597/8388608 points with Q:(0.908222, 0.0461643) and r=0.02 | I/O = 153 | in 0.000454 seconds.
+> found 10516/8388608 points with Q:(0.458295, 0.20141) and r=0.02 | I/O = 158 | in 0.000495 seconds.
+> found 5200/8388608 points with Q:(0.513408, 0.999445) and r=0.02 | I/O = 75 | in 0.000206 seconds.
+> found 10531/8388608 points with Q:(0.37907, 0.563393) and r=0.02 | I/O = 153 | in 0.000485 seconds.
+> found 10665/8388608 points with Q:(0.216374, 0.26457) and r=0.02 | I/O = 148 | in 0.000455 seconds.
+> found 10543/8388608 points with Q:(0.8555, 0.61749) and r=0.02 | I/O = 156 | in 0.000452 seconds.
+> found 10661/8388608 points with Q:(0.286212, 0.801754) and r=0.02 | I/O = 154 | in 0.000462 seconds.
+> found 10477/8388608 points with Q:(0.887269, 0.62301) and r=0.02 | I/O = 155 | in 0.000460 seconds.
+> found 10754/8388608 points with Q:(0.294313, 0.462721) and r=0.02 | I/O = 147 | in 0.000448 seconds.
+> found 9038/8388608 points with Q:(0.233902, 0.988297) and r=0.02 | I/O = 118 | in 0.000359 seconds.
+> found 10487/8388608 points with Q:(0.541736, 0.460046) and r=0.02 | I/O = 157 | in 0.000465 seconds.
+> found 10577/8388608 points with Q:(0.143569, 0.928478) and r=0.02 | I/O = 151 | in 0.000453 seconds.
+> found 10770/8388608 points with Q:(0.56173, 0.887569) and r=0.02 | I/O = 153 | in 0.000464 seconds.
+> found 10545/8388608 points with Q:(0.378283, 0.481028) and r=0.02 | I/O = 147 | in 0.000446 seconds.
+> found 10620/8388608 points with Q:(0.108162, 0.92766) and r=0.02 | I/O = 150 | in 0.000445 seconds.
+> found 10573/8388608 points with Q:(0.973824, 0.159289) and r=0.02 | I/O = 148 | in 0.000447 seconds.
+> found 10106/8388608 points with Q:(0.3607, 0.0163841) and r=0.02 | I/O = 132 | in 0.000435 seconds.
+> found 10042/8388608 points with Q:(0.0158289, 0.432119) and r=0.02 | I/O = 135 | in 0.000409 seconds.
+
+avg percentage of points found: 0.122668% | avg I/O: 146.82
+
+
+> main finished after 46.776512 seconds

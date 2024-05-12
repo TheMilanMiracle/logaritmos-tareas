@@ -1,0 +1,110 @@
+=====================================================================
+testing with 524288 points.
+
+> created 524288 random points in 0.031377 seconds.
+> created a mtree with 524288 random points in 12.320481 seconds with height 4.
+> found 647/524288 points with Q:(0.555315, 0.26278) and r=0.02 | I/O = 26 | in 0.000106 seconds.
+> found 630/524288 points with Q:(0.240275, 0.0617632) and r=0.02 | I/O = 17 | in 0.000049 seconds.
+> found 667/524288 points with Q:(0.946765, 0.0379718) and r=0.02 | I/O = 23 | in 0.000068 seconds.
+> found 657/524288 points with Q:(0.543599, 0.541096) and r=0.02 | I/O = 23 | in 0.000062 seconds.
+> found 664/524288 points with Q:(0.280552, 0.495274) and r=0.02 | I/O = 29 | in 0.000078 seconds.
+> found 666/524288 points with Q:(0.620559, 0.878801) and r=0.02 | I/O = 26 | in 0.000074 seconds.
+> found 652/524288 points with Q:(0.778315, 0.279512) and r=0.02 | I/O = 27 | in 0.000068 seconds.
+> found 688/524288 points with Q:(0.426038, 0.185448) and r=0.02 | I/O = 30 | in 0.000077 seconds.
+> found 643/524288 points with Q:(0.0867736, 0.902013) and r=0.02 | I/O = 23 | in 0.000062 seconds.
+> found 696/524288 points with Q:(0.146041, 0.399647) and r=0.02 | I/O = 29 | in 0.000069 seconds.
+> found 666/524288 points with Q:(0.95012, 0.350034) and r=0.02 | I/O = 24 | in 0.000064 seconds.
+> found 719/524288 points with Q:(0.0948657, 0.948852) and r=0.02 | I/O = 23 | in 0.000053 seconds.
+> found 637/524288 points with Q:(0.361725, 0.614036) and r=0.02 | I/O = 27 | in 0.000067 seconds.
+> found 666/524288 points with Q:(0.40084, 0.503258) and r=0.02 | I/O = 29 | in 0.000063 seconds.
+> found 646/524288 points with Q:(0.660163, 0.546909) and r=0.02 | I/O = 34 | in 0.000081 seconds.
+> found 657/524288 points with Q:(0.80969, 0.348623) and r=0.02 | I/O = 29 | in 0.000069 seconds.
+> found 696/524288 points with Q:(0.410386, 0.215477) and r=0.02 | I/O = 24 | in 0.000047 seconds.
+> found 636/524288 points with Q:(0.253449, 0.0499645) and r=0.02 | I/O = 25 | in 0.000056 seconds.
+> found 629/524288 points with Q:(0.591061, 0.357152) and r=0.02 | I/O = 27 | in 0.000063 seconds.
+> found 670/524288 points with Q:(0.852426, 0.797048) and r=0.02 | I/O = 28 | in 0.000070 seconds.
+> found 686/524288 points with Q:(0.675849, 0.871613) and r=0.02 | I/O = 23 | in 0.000054 seconds.
+> found 594/524288 points with Q:(0.151125, 0.472985) and r=0.02 | I/O = 25 | in 0.000055 seconds.
+> found 658/524288 points with Q:(0.658433, 0.454164) and r=0.02 | I/O = 32 | in 0.000065 seconds.
+> found 661/524288 points with Q:(0.356177, 0.577163) and r=0.02 | I/O = 27 | in 0.000052 seconds.
+> found 684/524288 points with Q:(0.97681, 0.745206) and r=0.02 | I/O = 21 | in 0.000054 seconds.
+> found 690/524288 points with Q:(0.0952406, 0.502218) and r=0.02 | I/O = 31 | in 0.000061 seconds.
+> found 598/524288 points with Q:(0.451071, 0.92693) and r=0.02 | I/O = 25 | in 0.000059 seconds.
+> found 703/524288 points with Q:(0.540966, 0.190106) and r=0.02 | I/O = 32 | in 0.000070 seconds.
+> found 637/524288 points with Q:(0.693364, 0.812795) and r=0.02 | I/O = 27 | in 0.000064 seconds.
+> found 642/524288 points with Q:(0.359705, 0.941806) and r=0.02 | I/O = 23 | in 0.000055 seconds.
+> found 652/524288 points with Q:(0.290429, 0.353526) and r=0.02 | I/O = 27 | in 0.000062 seconds.
+> found 663/524288 points with Q:(0.569004, 0.169394) and r=0.02 | I/O = 26 | in 0.000051 seconds.
+> found 665/524288 points with Q:(0.219359, 0.700815) and r=0.02 | I/O = 25 | in 0.000057 seconds.
+> found 714/524288 points with Q:(0.0579665, 0.822453) and r=0.02 | I/O = 30 | in 0.000065 seconds.
+> found 670/524288 points with Q:(0.619501, 0.81042) and r=0.02 | I/O = 28 | in 0.000062 seconds.
+> found 683/524288 points with Q:(0.682032, 0.910392) and r=0.02 | I/O = 24 | in 0.000049 seconds.
+> found 655/524288 points with Q:(0.383377, 0.29535) and r=0.02 | I/O = 29 | in 0.000062 seconds.
+> found 676/524288 points with Q:(0.749514, 0.833157) and r=0.02 | I/O = 26 | in 0.000058 seconds.
+> found 636/524288 points with Q:(0.41032, 0.0418096) and r=0.02 | I/O = 26 | in 0.000059 seconds.
+> found 687/524288 points with Q:(0.787016, 0.105691) and r=0.02 | I/O = 25 | in 0.000065 seconds.
+> found 661/524288 points with Q:(0.607909, 0.38713) and r=0.02 | I/O = 24 | in 0.000056 seconds.
+> found 641/524288 points with Q:(0.31406, 0.882256) and r=0.02 | I/O = 27 | in 0.000061 seconds.
+> found 674/524288 points with Q:(0.0723625, 0.05898) and r=0.02 | I/O = 25 | in 0.000064 seconds.
+> found 642/524288 points with Q:(0.871776, 0.855026) and r=0.02 | I/O = 26 | in 0.000059 seconds.
+> found 669/524288 points with Q:(0.796831, 0.765726) and r=0.02 | I/O = 30 | in 0.000066 seconds.
+> found 683/524288 points with Q:(0.119253, 0.23148) and r=0.02 | I/O = 27 | in 0.000063 seconds.
+> found 622/524288 points with Q:(0.400875, 0.0872602) and r=0.02 | I/O = 26 | in 0.000059 seconds.
+> found 612/524288 points with Q:(0.788075, 0.688256) and r=0.02 | I/O = 26 | in 0.000057 seconds.
+> found 661/524288 points with Q:(0.510709, 0.620234) and r=0.02 | I/O = 26 | in 0.000059 seconds.
+> found 636/524288 points with Q:(0.430653, 0.846042) and r=0.02 | I/O = 24 | in 0.000056 seconds.
+> found 620/524288 points with Q:(0.756434, 0.13021) and r=0.02 | I/O = 29 | in 0.000056 seconds.
+> found 657/524288 points with Q:(0.42556, 0.112686) and r=0.02 | I/O = 25 | in 0.000046 seconds.
+> found 643/524288 points with Q:(0.945843, 0.139811) and r=0.02 | I/O = 20 | in 0.000048 seconds.
+> found 0/524288 points with Q:(0.18162, 0.175073) and r=0.02 | I/O = 9 | in 0.000014 seconds.
+> found 646/524288 points with Q:(0.280764, 0.356163) and r=0.02 | I/O = 29 | in 0.000058 seconds.
+> found 688/524288 points with Q:(0.743292, 0.968636) and r=0.02 | I/O = 24 | in 0.000064 seconds.
+> found 699/524288 points with Q:(0.850892, 0.888673) and r=0.02 | I/O = 23 | in 0.000049 seconds.
+> found 640/524288 points with Q:(0.947653, 0.057352) and r=0.02 | I/O = 25 | in 0.000058 seconds.
+> found 659/524288 points with Q:(0.912378, 0.923255) and r=0.02 | I/O = 25 | in 0.000055 seconds.
+> found 628/524288 points with Q:(0.688981, 0.819429) and r=0.02 | I/O = 26 | in 0.000059 seconds.
+> found 634/524288 points with Q:(0.0509093, 0.709209) and r=0.02 | I/O = 19 | in 0.000052 seconds.
+> found 597/524288 points with Q:(0.796469, 0.808234) and r=0.02 | I/O = 26 | in 0.000058 seconds.
+> found 676/524288 points with Q:(0.49649, 0.451784) and r=0.02 | I/O = 27 | in 0.000058 seconds.
+> found 653/524288 points with Q:(0.0720179, 0.584544) and r=0.02 | I/O = 27 | in 0.000057 seconds.
+> found 460/524288 points with Q:(0.430586, 0.00719952) and r=0.02 | I/O = 16 | in 0.000034 seconds.
+> found 622/524288 points with Q:(0.13741, 0.502671) and r=0.02 | I/O = 28 | in 0.000057 seconds.
+> found 672/524288 points with Q:(0.615357, 0.18702) and r=0.02 | I/O = 25 | in 0.000057 seconds.
+> found 641/524288 points with Q:(0.32683, 0.562969) and r=0.02 | I/O = 27 | in 0.000057 seconds.
+> found 642/524288 points with Q:(0.738043, 0.5612) and r=0.02 | I/O = 28 | in 0.000067 seconds.
+> found 702/524288 points with Q:(0.917362, 0.508451) and r=0.02 | I/O = 24 | in 0.000053 seconds.
+> found 605/524288 points with Q:(0.477086, 0.018807) and r=0.02 | I/O = 18 | in 0.000043 seconds.
+> found 635/524288 points with Q:(0.90748, 0.660655) and r=0.02 | I/O = 24 | in 0.000060 seconds.
+> found 701/524288 points with Q:(0.718007, 0.327979) and r=0.02 | I/O = 32 | in 0.000068 seconds.
+> found 673/524288 points with Q:(0.251234, 0.855134) and r=0.02 | I/O = 27 | in 0.000058 seconds.
+> found 658/524288 points with Q:(0.674563, 0.630384) and r=0.02 | I/O = 27 | in 0.000061 seconds.
+> found 630/524288 points with Q:(0.339593, 0.940215) and r=0.02 | I/O = 22 | in 0.000048 seconds.
+> found 666/524288 points with Q:(0.748448, 0.725472) and r=0.02 | I/O = 28 | in 0.000058 seconds.
+> found 0/524288 points with Q:(0.177256, 0.136063) and r=0.02 | I/O = 10 | in 0.000018 seconds.
+> found 630/524288 points with Q:(0.720607, 0.244939) and r=0.02 | I/O = 30 | in 0.000068 seconds.
+> found 658/524288 points with Q:(0.252138, 0.249274) and r=0.02 | I/O = 27 | in 0.000055 seconds.
+> found 634/524288 points with Q:(0.751945, 0.151193) and r=0.02 | I/O = 28 | in 0.000096 seconds.
+> found 678/524288 points with Q:(0.338212, 0.389548) and r=0.02 | I/O = 30 | in 0.000065 seconds.
+> found 690/524288 points with Q:(0.952517, 0.367302) and r=0.02 | I/O = 22 | in 0.000056 seconds.
+> found 631/524288 points with Q:(0.928502, 0.665043) and r=0.02 | I/O = 27 | in 0.000061 seconds.
+> found 675/524288 points with Q:(0.173493, 0.69056) and r=0.02 | I/O = 27 | in 0.000063 seconds.
+> found 680/524288 points with Q:(0.709367, 0.845864) and r=0.02 | I/O = 28 | in 0.000066 seconds.
+> found 675/524288 points with Q:(0.506518, 0.65058) and r=0.02 | I/O = 29 | in 0.000063 seconds.
+> found 670/524288 points with Q:(0.978559, 0.616847) and r=0.02 | I/O = 23 | in 0.000049 seconds.
+> found 653/524288 points with Q:(0.471981, 0.224525) and r=0.02 | I/O = 29 | in 0.000066 seconds.
+> found 655/524288 points with Q:(0.854909, 0.229792) and r=0.02 | I/O = 27 | in 0.000061 seconds.
+> found 20/524288 points with Q:(0.170007, 0.146544) and r=0.02 | I/O = 11 | in 0.000016 seconds.
+> found 684/524288 points with Q:(0.872015, 0.194502) and r=0.02 | I/O = 24 | in 0.000048 seconds.
+> found 686/524288 points with Q:(0.330565, 0.918455) and r=0.02 | I/O = 27 | in 0.000055 seconds.
+> found 637/524288 points with Q:(0.163394, 0.0492715) and r=0.02 | I/O = 24 | in 0.000058 seconds.
+> found 654/524288 points with Q:(0.298545, 0.0511718) and r=0.02 | I/O = 24 | in 0.000066 seconds.
+> found 695/524288 points with Q:(0.202365, 0.415532) and r=0.02 | I/O = 28 | in 0.000059 seconds.
+> found 660/524288 points with Q:(0.80508, 0.0504904) and r=0.02 | I/O = 20 | in 0.000052 seconds.
+> found 656/524288 points with Q:(0.417792, 0.540577) and r=0.02 | I/O = 30 | in 0.000064 seconds.
+> found 675/524288 points with Q:(0.20562, 0.757597) and r=0.02 | I/O = 27 | in 0.000057 seconds.
+> found 648/524288 points with Q:(0.448157, 0.346294) and r=0.02 | I/O = 29 | in 0.000066 seconds.
+
+avg percentage of points found: 0.121456% | avg I/O: 25.57
+
+
+> main finished after 12.373484 seconds
