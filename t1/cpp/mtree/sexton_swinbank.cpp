@@ -118,7 +118,7 @@ std::vector<std::vector<Point*>> cluster(std::vector<Point*> C_in){
 
         for(long unsigned int i = 0; i < c_.size(); i++){ // c = c U c_
 
-            c.push_back(c_[0]);
+            c.push_back(c_[i]);
 
         }
 
@@ -129,7 +129,7 @@ std::vector<std::vector<Point*>> cluster(std::vector<Point*> C_in){
 
         for(long unsigned int i = 0; i < c_.size(); i++){ // c = c U c_
 
-            c.push_back(c_[0]);
+            c.push_back(c_[i]);
 
         }
 

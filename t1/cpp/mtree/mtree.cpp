@@ -51,7 +51,7 @@ double dist(struct point *p1, struct point *p2){
 
 }
 
-int get_heigthRec(MTree* t, int n){
+int get_heigthRec(MTree* t){
 
     int h = INT16_MIN, h_;
 
@@ -63,7 +63,7 @@ int get_heigthRec(MTree* t, int n){
 
     for(unsigned long int i = 0; i < t->entry->a->entries->size(); i++){
 
-        h_ = n + get_heigthRec(newMTree((*t->entry->a->entries)[i]), n) + 1;
+        h_ = get_heigthRec(newMTree((*t->entry->a->entries)[i])) + 1;
 
         if(h_ > h){
 
@@ -75,12 +75,6 @@ int get_heigthRec(MTree* t, int n){
 
     return h;
 
-
-}
-
-int get_heigth(struct mtree *t){
-
-    return get_heigthRec(t, 0);
 
 }
 

@@ -27,7 +27,7 @@ struct entry *newEntry(struct point *point, double c_r, struct node *a);
 struct node *newNode(std::vector<struct entry*> *entries);
 
 double dist(struct point *p1, struct point *p2);
-int get_heigth(struct mtree *t);
+int get_heigthRec(struct mtree *t);
 struct point *medoid(std::vector<struct point*> cluster);
 
 std::vector<struct point*> *searchTree(struct mtree* t, struct point*q, double r);

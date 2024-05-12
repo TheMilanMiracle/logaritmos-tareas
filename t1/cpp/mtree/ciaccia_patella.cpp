@@ -30,7 +30,7 @@ void lookForRec(MTree *t, int h, std::vector<Point*> *samples, std::vector<MTree
 
     }
 
-    if(get_heigth(t) == h){ // si la altura de este subárbol es h, se agrega a forest
+    if(get_heigthRec(t) == h){ // si la altura de este subárbol es h, se agrega a forest
 
         forest->push_back(t); // se agrega el subárbol al vector de subárboles
 
@@ -307,7 +307,7 @@ struct mtree *ciaccia_patella(std::vector<struct point*> set){
 
     for(long unsigned int i = 0; i < Forest.size(); i++){ // se busca la menor altura en los árboles dentro de Forest
 
-        int h_ = get_heigth(Forest[i]); // altura del i-ésimo árbol
+        int h_ = get_heigthRec(Forest[i]); // altura del i-ésimo árbol
 
         if(h_ < min){ // caso se encuentra un menor h
 
@@ -323,7 +323,7 @@ struct mtree *ciaccia_patella(std::vector<struct point*> set){
 
     for(long unsigned int i = 0; i < Forest.size(); i++){
 
-        if(get_heigth(Forest[i]) == h){ // si el árbol es de altura h
+        if(get_heigthRec(Forest[i]) == h){ // si el árbol es de altura h
 
             T.push_back(Forest[i]); // se agrega a T
 
