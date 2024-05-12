@@ -8,6 +8,8 @@
 #include "./mtree.h"
 
 
+#include <iostream>
+
 struct mtree *newMTree(struct entry *entry){
     struct mtree *new_tree = (struct mtree*) std::malloc(sizeof(struct mtree));
 
@@ -51,30 +53,28 @@ double dist(struct point *p1, struct point *p2){
 
 int get_heigthRec(MTree* t, int n){
 
-    if((*t->entry->a->entries)[0]->a == NULL){
+    int h = INT16_MIN, h_;
+
+    if(t->entry->a == NULL){ // la función se llamó para un nodo hoja
 
         return 1;
 
     }
-    else{
 
-        int h = INT16_MIN;
+    for(unsigned long int i = 0; i < t->entry->a->entries->size(); i++){
 
-        for(unsigned long int i = 0; i < t->entry->a->entries->size(); i++){
+        h_ = n + get_heigthRec(newMTree((*t->entry->a->entries)[i]), n) + 1;
 
-            int h_ = get_heigthRec(newMTree((*t->entry->a->entries)[i]), n) + 1;
+        if(h_ > h){
 
-            if(h_ > h){
-
-                h = h_;
-
-            }
+            h = h_;
 
         }
 
-        return h;
-
     }
+
+    return h;
+
 
 }
 
