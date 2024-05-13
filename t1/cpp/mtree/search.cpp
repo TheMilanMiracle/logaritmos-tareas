@@ -6,22 +6,16 @@
 #include "./mtree.h"
 
 
-long int simulated_reads;
+long int simulated_reads; // variable para contar las lecturas simuladas de bloques de memoria
 
 
 void searchTreeRec(struct mtree *t, struct point *q, double r, std::vector<struct point*> *points){
 
-    simulated_reads++;
+    simulated_reads++; // acceder a un nodo del árbol equivale a una lectura de bloque de memoria
 
     Node *root = t->entry->a;
 
-    // std::cout << t->entry->c_r << std::endl;
-
-    // std::cout << t->entry->a->entries << std::endl;
-
-    if((*t->entry->a->entries)[0]->a == NULL){
-        // std::cout << "if" << std::endl;
-
+    if((*t->entry->a->entries)[0]->a == NULL){ // si el nodo se trata de un nodo hoja
 
         int n = (*root->entries).size();
 
@@ -38,8 +32,7 @@ void searchTreeRec(struct mtree *t, struct point *q, double r, std::vector<struc
         }
 
     }
-    else{
-        // std::cout << "if" << std::endl;
+    else{ // si se trata de un nodo externo
 
         int n = (*root->entries).size();
 
@@ -60,14 +53,11 @@ void searchTreeRec(struct mtree *t, struct point *q, double r, std::vector<struc
     }
 }
 
-
 std::vector<struct point*> *searchTree(struct mtree* t, struct point*q, double r){
 
-    simulated_reads = 0;
+    simulated_reads = 0; // se reinicia el contador de accesos a discos simulados
 
-    // std::cout << t->entry->a->entries->size() << std::endl;
-
-    std::vector<Point*> *points = new std::vector<Point*>;
+    std::vector<Point*> *points = new std::vector<Point*>; // vector para los puntos encontrados en la búsqueda
 
     searchTreeRec(t, q, r, points);
 

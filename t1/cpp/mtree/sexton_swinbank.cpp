@@ -9,19 +9,17 @@
 #define B B
 #define b b
 
+
 std::vector<std::vector<Point*>> cluster(std::vector<Point*> C_in){
 
     std::vector<std::vector<Point*>> C_out, C(C_in.size());
 
-    // std::cout << "=== cluster | paso 1 ===" << std::endl;
 
     for(long unsigned int i = 0; i < C_in.size(); i++){
 
         C[i].push_back(C_in[i]); // C[i] = { C_in[i] }
 
     }
-
-    // std::cout << "=== cluster | paso 2 ===" << std::endl;
 
     while(C.size() > 1){
         double min = DBL_MAX, d;
@@ -78,14 +76,7 @@ std::vector<std::vector<Point*>> cluster(std::vector<Point*> C_in){
 
     }
 
-    // std::cout << "=== cluster | paso 3 ===" << std::endl;
-
-    // std::cout << "=> |C_out|=" << C_out.size() << " - |C|="<< C.size() << std::endl;
-
-
     std::vector<Point*> c_, c = C[0]; // c se define como el ultimo cluster en C
-
-    // std::cout << "=== cluster | paso 4 ===" << std::endl;
 
     if(C_out.size() > 0){ // si |C_out| > 0
 
@@ -111,8 +102,6 @@ std::vector<std::vector<Point*>> cluster(std::vector<Point*> C_in){
 
 
     }// si |C_out| == 0, c = {}
-
-    // std::cout << "=== cluster | paso 5 ===" << std::endl;
 
     if(c.size() + c_.size() <= B){// si c y c_ caben juntos en un bloque
 
@@ -149,10 +138,8 @@ std::vector<std::vector<Point*>> cluster(std::vector<Point*> C_in){
 
                 }
 
-
                 std::vector<Point*> c_cpy(c.size());
                 std::vector<Point*> c1_, c2_;
-
 
                 for(long unsigned int k = 0; k < c.size(); k++){ // c_cpy = c
 
@@ -163,25 +150,22 @@ std::vector<std::vector<Point*>> cluster(std::vector<Point*> C_in){
                 c1_.push_back(c_cpy[i]); // c1_ = {c[i]}
                 c_cpy.erase(c_cpy.begin() + i); // c = c / {c[i]}
 
-                // std::cout << "(cpy size, i, j)=("<< c_cpy.size()<< ", "<< i << ", "<< j << ")"<<std::endl;
-
                 c2_.push_back(c_cpy[j]); // c2_ = {c[j]}
                 c_cpy.erase(c_cpy.begin() + j); // c = c / {c[j]}
-
 
                 int k = 0;
                 double min_c1, min_c2;
 
                 while(c_cpy.size()){
 
-                    k = (k+1)%2;
+                    k = (k+1)%2; // se busca alternadamente
 
                     int idx;
 
                     if(k){
                         min_c1 = DBL_MAX;
 
-                        for(long unsigned int h = 0; h < c_cpy.size(); h++){
+                        for(long unsigned int h = 0; h < c_cpy.size(); h++){ // se busca el más cercano al centro
  
                             double d = dist(c[i], c_cpy[h]);
 
@@ -200,7 +184,7 @@ std::vector<std::vector<Point*>> cluster(std::vector<Point*> C_in){
                     else{
                         min_c2 = DBL_MAX;
 
-                        for(long unsigned int h = 0; h < c_cpy.size(); h++){
+                        for(long unsigned int h = 0; h < c_cpy.size(); h++){  // se busca el más cercano al centro
 
                             double d = dist(c[j], c_cpy[h]);
 
@@ -229,14 +213,8 @@ std::vector<std::vector<Point*>> cluster(std::vector<Point*> C_in){
 
         }
 
-        // std::cout << d.size() << std::endl;
-
-
         double min = d[0];
         int idx = 0;
-
-        // std::cout << "{" << std::endl;
-
 
         for(long unsigned int i = 1; i < d.size() - 1; i++){
 
@@ -249,33 +227,16 @@ std::vector<std::vector<Point*>> cluster(std::vector<Point*> C_in){
 
         }
 
-        // std::cout << "}" << std::endl;
-
-
-        // std::cout << "checkpoint" << std::endl;
-
-
         C_out.push_back(c1[idx]);
         C_out.push_back(c2[idx]);
         
     }
 
-    // std::cout << "=== cluster | paso 6 ===" << std::endl;
-
-    // std::cout << "=> cluster retorno " << C_out.size() << " clusters" << std::endl;
-    for(long unsigned int i = 0; i < C_out.size(); i++){
-
-        // std::cout <<"==> cluster "<< i << " tiene tamaño " << C_out[i].size()<<std::endl; 
-
-    }
-
-
     return C_out;
 
 }
 
-
-Entry* LeafOutput(std::vector<Point*> C_in){//newNode(entries)
+Entry* LeafOutput(std::vector<Point*> C_in){
 
     Point* g = medoid(C_in);
     double r = 0;
@@ -289,12 +250,9 @@ Entry* LeafOutput(std::vector<Point*> C_in){//newNode(entries)
 
     }
 
-    // std::cout << "=> Leaf entries: " << C->size()<< std::endl;
-
     return newEntry(g, r, newNode(C));
 
 }
-
 
 Entry* Output(std::vector<Entry*> C_mra){
 
@@ -319,22 +277,13 @@ Entry* Output(std::vector<Entry*> C_mra){
 
     }
 
-    // std::cout << "=> Node entries: " << C->size()<< std::endl;
-
     return newEntry(G, R, newNode(C));
 
 }
 
-
 struct mtree* sexton_swinbank(std::vector<struct point*> C_in){
 
-    // std::cout << "===> Algoritmo SS con " << C_in.size() << " puntos" << std::endl;
-
-
-    if(C_in.size() <= B){
-
-        // std::cout << "===> |Points| <= B (B=" << B << ")" << std::endl;
-
+    if(C_in.size() <= B){ // si la cantidad de puntos con los que se llama a la función cabe en un nodo 
 
         Entry* e = LeafOutput(C_in);
 
@@ -345,16 +294,8 @@ struct mtree* sexton_swinbank(std::vector<struct point*> C_in){
     std::vector<std::vector<Point*>> C_out = cluster(C_in);
     std::vector<Entry*> C; 
 
-    // std::cout << "===> Clusters: " << C_out.size() << std::endl;
 
-    // for(long unsigned int i = 0; i < C_out.size(); i++){
-
-        // std::cout <<"====> cluster "<< i << " tiene tamaño " << C_out[i].size()<<std::endl; 
-
-    // }
-
-
-    for(long unsigned int i = 0; i < C_out.size(); i++){
+    for(long unsigned int i = 0; i < C_out.size(); i++){ // por cada c en C_out, se añade OutputHoja(a) a C
 
         C.push_back(LeafOutput(C_out[i]));
 
@@ -365,27 +306,24 @@ struct mtree* sexton_swinbank(std::vector<struct point*> C_in){
         std::vector<Point*> Medoids(C.size());
         std::vector<std::vector<Point*>> Clusters;
 
-        for(long unsigned int i = 0; i < C.size(); i++){
+        for(long unsigned int i = 0; i < C.size(); i++){ // Medoids = {g|(g, r, a) en C}
 
             Medoids[i] = C[i]->p;
 
         }
 
-        Clusters = cluster(Medoids);
-        std::vector<std::vector<Entry*>> C_mra(Clusters.size());
+        Clusters = cluster(Medoids); // C_out  = clusters(Medoids)
+        std::vector<std::vector<Entry*>> C_mra(Clusters.size()); // C_mra = {}
 
         for(long unsigned int i = 0; i < Clusters.size(); i++){// i == c
 
             std::vector<Entry*> current(Clusters[i].size());
 
             for(long unsigned int j = 0; j < Clusters[i].size(); j++){
-                // std::cout << "===> g in c: "<< std::endl;
 
                 for(long unsigned int k = 0; k < C.size(); k++){
 
                     if(C[k]->p == Clusters[i][j]){
-
-                        // std::cout << "===> entry++ " << std::endl;
 
                         current[j] = newEntry(C[k]->p, C[k]->c_r, C[k]->a);
                         break;
@@ -405,7 +343,7 @@ struct mtree* sexton_swinbank(std::vector<struct point*> C_in){
 
         C = C2;
 
-        for(long unsigned int i = 0; i < C_mra.size(); i++){
+        for(long unsigned int i = 0; i < C_mra.size(); i++){ // por cada s en C_mra se añade Output(s) a C
 
             C.push_back(Output(C_mra[i]));
 
@@ -413,8 +351,8 @@ struct mtree* sexton_swinbank(std::vector<struct point*> C_in){
 
     }
 
-    Entry *ret = Output(C);
+    Entry *ret = Output(C); // sea Output(C) la entry (g, r, a)
 
-    return newMTree(ret);
+    return newMTree(ret); // se retorna el árbol
 
 } 

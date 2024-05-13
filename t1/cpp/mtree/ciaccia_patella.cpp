@@ -13,7 +13,6 @@
 #define b b
 
 
-
 void lookForRec(MTree *t, int h, std::vector<Point*> *samples, std::vector<MTree*> *forest){
 
     if((*t->entry->a->entries)[0]->a == NULL){// si este nodo es un nodo externo
@@ -50,18 +49,13 @@ void lookForRec(MTree *t, int h, std::vector<Point*> *samples, std::vector<MTree
 
 }
 
-
 void listMTreeRec(MTree *t, std::vector<Entry*> *Entries){
 
     Node *root = t->entry->a;
 
     if((*t->entry->a->entries)[0]->a == NULL){
-        // std::cout << "if" << std::endl;
 
         int n = (*root->entries).size();
-
-        // std::cout << "if -- "<<n << std::endl;
-
 
         for(int i = 0; i < n; i++){
 
@@ -69,12 +63,8 @@ void listMTreeRec(MTree *t, std::vector<Entry*> *Entries){
 
         }
 
-        // std::cout << Entries->size() << std::endl;
-
     }
     else{
-        // std::cout << "else" << std::endl;
-
 
         int n = (*root->entries).size();
 
@@ -91,19 +81,15 @@ void listMTreeRec(MTree *t, std::vector<Entry*> *Entries){
     }
 }
 
-
 std::vector<Entry*> *listMTree(MTree *t){
 
     std::vector<Entry*> *ret = new std::vector<Entry*>;
 
     listMTreeRec(t, ret);
 
-    // std::cout << "antes de salrir" << ret->size() << std::endl;
- 
     return ret;
 
 }
-
 
 struct mtree *ciaccia_patella(std::vector<struct point*> set){
 
@@ -347,6 +333,8 @@ struct mtree *ciaccia_patella(std::vector<struct point*> set){
 
             (*T_sup->entry->a->entries)[t]->a = Forest[t]->entry->a;
 
+            (*T_sup->entry->a->entries)[t]->c_r = Forest[t]->entry->c_r;
+
             (*T_sup->entry->a->entries)[t]->p = Forest[t]->entry->p;
 
         }
@@ -381,27 +369,6 @@ struct mtree *ciaccia_patella(std::vector<struct point*> set){
             break;
 
         }
-
-    }
-
-    double max = DBL_MIN;
-    Point* med = medoid(Samples);
-
-    for(long unsigned int i = 0; i < T_sup->entry->a->entries->size(); i++){
-
-        double d = dist(med, (*T_sup->entry->a->entries)[i]->p);
-
-        if(d > max){
-
-            max = d;
-
-        }
-
-    }
-
-    for(long unsigned int i = 0; i < T_sup->entry->a->entries->size(); i++){
-
-        (*T_sup->entry->a->entries)[i]->c_r = max;
 
     }
 
