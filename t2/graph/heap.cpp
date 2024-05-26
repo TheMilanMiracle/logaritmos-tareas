@@ -2,13 +2,7 @@
 
 #include "graph.h"
 
-typedef struct{
-    std::vector<double, Vertex*> *A;
-    std::map<Vertex*, long unsigned int> *M;
-} Heap;
-
-
-double heap_extract(Heap *Heap){
+std::pair<double, struct vertex*> heap_extract(struct heap *Heap){
 
     std::iter_swap(Heap->A->begin(), Heap->A->end() - 1);
 
@@ -16,15 +10,15 @@ double heap_extract(Heap *Heap){
 
     Heap->A->erase(Heap->A->end() - 1);
 
-    heapify_aux(Heap->A, 0);
+    sink(Heap->A, 0);
 
     Heap->M->erase(ret.second);
 
-    return ret.first;
+    return ret;
 
 }
 
-void sink(std::vector<double, Vertex*> *A, int i){
+void sink(std::vector<std::pair<double, Vertex*>> *A, int i){
 
     int l = 2*i; 
     int r = 2*i + 1; 
@@ -51,35 +45,37 @@ void sink(std::vector<double, Vertex*> *A, int i){
 
 }
 
-void climb(std::vector<double, Vertex*> *A, int i){
+void climb(std::vector<std::pair<double, Vertex*>> *A, int i){
 
     int p = (i-1)/2; 
 
-    int _max = i;
+    if((*A)[p].first < (*A)[i].first){
 
-    if(l < A->size() && (*A)[p].first < (*A)[i].first){
+        std::iter_swap(A->begin() + i, A->begin() + p);
 
-
+        climb(A, p);
 
     }
 
 }
 
-Heap* heapify(std::vector<double, Vertex*> *A){
+struct heap* heapify(std::vector<std::pair<double, Vertex*>> *A){
 
     Heap* heap = (Heap*) malloc(sizeof(Heap*));
 
     for(int i = (A->size() / 2); i >= 0; i--){
 
-        heapify_aux(A, i);
+        sink(A, i);
 
     }
 
     heap->A = A;
 
-    for(int i = 0; i < A->size(); i++){
+    std::map<Vertex*, long unsigned int> map = (*heap->M); 
 
-        heap->M[(*A)[i].second] = i;
+    for(long unsigned int i = 0; i < A->size(); i++){
+
+        map[(*A)[i].second] = i;
 
     }
 
@@ -87,14 +83,14 @@ Heap* heapify(std::vector<double, Vertex*> *A){
 
 }
 
-void decreaseKey(Heap *Heap, Vertex *v, double d){
+void decreaseKey(struct heap *Heap, struct vertex *v, double d){
 
     std::map<Vertex*, long unsigned int> m = *Heap->M;
 
     long unsigned int i = m[v];
 
-    (*Heap->A)[i].first -= d;
+    (*Heap->A)[i].first = d;
 
-    heapify_aux(Heap->A, i);
+    climb(Heap->A, i);
 
 }
