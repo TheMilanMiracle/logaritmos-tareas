@@ -1,7 +1,11 @@
-FLAGS = -std=c++11
+DIR = graph
+
+DEP = ${DIR}/graph.cpp ${DIR}/heap.cpp ${DIR}/dijsktra.cpp ${DIR}/fibonacci_heap.cpp
+
+FLAGS = -std=c++11 -O
 
 run:
-	g++ ${FLAGS} test.cpp -o ./bin
+	g++ ${FLAGS} main.cpp ${DEP} -o ./bin
 	./bin
 	rm ./bin
 
@@ -11,6 +15,6 @@ run-san:
 	rm ./bin
 
 gdb:
-	g++ ${FLAGS} test.cpp -o ./bin
+	g++ ${FLAGS} -g -D_GLIBCXX_DEBUG main.cpp ${DEP} -o ./bin
 	gdb ./bin
 	rm ./bin
