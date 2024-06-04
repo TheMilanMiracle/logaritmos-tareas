@@ -4,7 +4,8 @@
 #include "graph.h"
 
 
-std::pair<std::map<struct vertex*, struct vertex*>, std::map<struct vertex*, double>> DijsktraHeap(struct graph G, struct vertex* root){
+// std::pair<std::map<struct vertex*, struct vertex*>, std::map<struct vertex*, double>> DijsktraHeap(struct graph G, struct vertex* root){
+void DijsktraHeap(struct graph G, struct vertex* root){
 
     std::map<Vertex*, double> *dists = new std::map<Vertex*, double>;
     std::map<Vertex*, Vertex*> *prevs = new std::map<Vertex*, Vertex*>;
@@ -33,16 +34,19 @@ std::pair<std::map<struct vertex*, struct vertex*>, std::map<struct vertex*, dou
 
     }
 
-    std::cout << &Q << std::endl;
-    std::cout << Q.size() << std::endl;
+    // std::cout << &Q << std::endl;
+    // std::cout << Q.size() << std::endl;
 
     Heap* PQ = heapify(&Q);
+
+    // std::cout << "heapified" << std::endl;
 
     while(PQ->A->size()){
 
         std::pair<double, Vertex*> p = heap_extract(PQ);
+        // std::cout << "heap_extract" << std::endl;
 
-        for(long unsigned int i = 0; i < p.second->edges->size(); i++){
+        for(int i = 0; i < p.second->edges->size(); i++){
 
             Vertex* v = p.second;
             Vertex* u = (*v->edges)[i].first;
@@ -54,6 +58,8 @@ std::pair<std::map<struct vertex*, struct vertex*>, std::map<struct vertex*, dou
                 (*prevs)[u] = v;
 
                 decreaseKey(PQ, u, (*dists)[v] + w);
+                // std::cout << "decreaseKey" << std::endl;
+
 
             };
 
@@ -61,9 +67,9 @@ std::pair<std::map<struct vertex*, struct vertex*>, std::map<struct vertex*, dou
 
     }
 
-    std::pair<std::map<Vertex*, Vertex*>, std::map<Vertex*, double>> ret = {(*prevs), (*dists)};
+    // std::pair<std::map<Vertex*, Vertex*>, std::map<Vertex*, double>> ret = {(*prevs), (*dists)};
 
-    return ret;
+    // return ret;
 }
 
 

@@ -46,21 +46,28 @@ int main(){
 
     ref = std::chrono::system_clock::now();
 
-    Graph* G = makeGraph(18, 22);
+    unsigned long int v = 14;
+    unsigned long int e = 20;
+
+    Graph* G = makeGraph(v, e);
 
     std::cout << "> grafo construido en " << elapsed_time(ref) << std::endl;
 
+    std::cout << "e*log(v) = " << (double) e * std::log2(v) << std::endl;
+    std::cout << "e+vlog(v) = " << (double) e + (double) v * std::log2(v) << std::endl;
+ 
     ref = std::chrono::system_clock::now();
 
     DijsktraHeap(*G, (*G->V)[0]);
 
     std::cout << "> dijsktra con heap " << elapsed_time(ref) << std::endl;
 
-    // ref = std::chrono::system_clock::now();
 
-    // DijsktraFibHeap(*G, (*G->V)[0]);
+    ref = std::chrono::system_clock::now();
 
-    // std::cout << "> dijsktra con fibonacci heap " << elapsed_time(ref) << std::endl;
+    DijsktraFibHeap(*G, (*G->V)[0]);
+
+    std::cout << "> dijsktra con fibonacci heap " << elapsed_time(ref) << std::endl;
 
 
     return 0;
