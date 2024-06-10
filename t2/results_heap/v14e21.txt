@@ -1,0 +1,15 @@
+=========================================================================================
+
+V = 14, E = 21
+2.587222 seconds; 3.553256 seconds; 3.063412 seconds; 2.906865 seconds; 3.213201 seconds; 
+2.891768 seconds; 3.077144 seconds; 3.066466 seconds; 2.979113 seconds; 2.790654 seconds; 
+3.113508 seconds; 2.942596 seconds; 3.061961 seconds; 3.072906 seconds; 2.945538 seconds; 
+3.100550 seconds; 2.832586 seconds; 3.127057 seconds; 2.944206 seconds; 2.889653 seconds; 
+2.831380 seconds; 2.783550 seconds; 3.095687 seconds; 3.092158 seconds; 2.929596 seconds; 
+3.045254 seconds; 3.159672 seconds; 2.969641 seconds; 3.077270 seconds; 2.944034 seconds; 
+2.851238 seconds; 2.932111 seconds; 2.737860 seconds; 2.987009 seconds; 2.912604 seconds; 
+2.976703 seconds; 2.814467 seconds; 2.804881 seconds; 3.083417 seconds; 2.932330 seconds; 
+3.336791 seconds; 2.896990 seconds; 2.910096 seconds; 2.798016 seconds; 2.925353 seconds; 
+2.853433 seconds; 3.037002 seconds; 2.983673 seconds; 2.855077 seconds; 2.926260 seconds; 
+
+=========================================================================================
