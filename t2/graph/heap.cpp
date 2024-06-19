@@ -2,7 +2,7 @@
 
 #include "graph.h"
 
-void sink(std::vector<std::pair<double, Vertex*>> *A, std::unordered_map<Vertex*, int> *M,  int i){
+void sink(std::vector<std::pair<double, Vertex*>> *A, int i){ //log(n)
 
     if(A->size() == 0){return;}
 
@@ -10,9 +10,6 @@ void sink(std::vector<std::pair<double, Vertex*>> *A, std::unordered_map<Vertex*
     int r = 2*i + 2; 
 
     int _max = i;
-
-    // std::cout << "sink: "<< A->size() << " | " << i << " | "<< l << " | "<< r<<std::endl;
-
 
     if(l < A->size()-1 && (*A)[l].first < (*A)[i].first){
 
@@ -28,36 +25,33 @@ void sink(std::vector<std::pair<double, Vertex*>> *A, std::unordered_map<Vertex*
 
         std::iter_swap(A->begin() + i, A->begin() + _max);
 
-        int aux = (*M)[(*A)[i].second];
+        int* aux = (int*) (*A)[i].second->ptr;
 
-        (*M)[(*A)[i].second] = (*M)[(*A)[_max].second];
+        (*A)[i].second->ptr = (*A)[_max].second->ptr;
 
-        (*M)[(*A)[_max].second] = aux;
+        (*A)[_max].second ->ptr = aux;
 
-        sink(A, M, _max);
+        sink(A, _max);
 
     }
 
 }
 
-void climb(std::vector<std::pair<double, Vertex*>> *A, std::unordered_map<Vertex*, int> *M, int i){
+void climb(std::vector<std::pair<double, Vertex*>> *A, int i){//log(n)
 
     int p = (i-1)/2; 
-
-    // std::cout << "climb | "<< A->size()<< " | "<< i << " | " << p<< std::endl;
 
     if((*A)[p].first < (*A)[i].first){
 
         std::iter_swap(A->begin() + i, A->begin() + p);
 
-        int aux = (*M)[(*A)[i].second];
+        int* aux = (int*)(*A)[i].second->ptr;
 
-        (*M)[(*A)[i].second] = (*M)[(*A)[p].second];
+        (*A)[i].second->ptr = (*A)[p].second->ptr;
 
-        (*M)[(*A)[p].second] = aux;
+        (*A)[p].second ->ptr = aux;
         
-
-        climb(A, M, p);
+        climb(A, p);
 
     }
 
@@ -67,19 +61,17 @@ std::pair<double, struct vertex*> heap_extract(struct heap *Heap){
 
     std::iter_swap(Heap->A->begin(), Heap->A->end() - 1);
 
-    int aux = (*Heap->M)[(*Heap->A)[0].second];
+    int* aux =(int*) (*Heap->A)[0].second->ptr;
 
-    (*Heap->M)[(*Heap->A)[0].second] = (*Heap->M)[(*Heap->A)[Heap->A->size() - 1].second];
+    (*Heap->A)[0].second->ptr = (*Heap->A)[Heap->A->size() - 1].second->ptr;
 
-    (*Heap->M)[(*Heap->A)[Heap->A->size() - 1].second] = aux;
+    (*Heap->A)[Heap->A->size() - 1].second->ptr = aux;
 
     std::pair<double, Vertex*> ret = (*Heap->A)[Heap->A->size() - 1];
 
-    Heap->A->erase(Heap->A->end() - 1);
+    Heap->size--;
 
-    sink(Heap->A, Heap->M, 0);
-
-    Heap->M->erase(ret.second);
+    sink(Heap->A, 0);
 
     return ret;
 
@@ -89,19 +81,19 @@ struct heap* heapify(std::vector<std::pair<double, Vertex*>> *A){
 
     Heap* heap = (Heap*) malloc(sizeof(Heap*));
 
-    std::unordered_map<Vertex*, int> *M = new std::unordered_map<Vertex*, int>; 
+    heap->size = A->size();
 
     for(int i = 0; i < A->size(); i++){
 
-        (*M)[(*A)[i].second] = i;
+        int *idx = (int*) malloc(sizeof(int*));
+        *idx = i;
+        (*A)[i].second->ptr = idx;
 
     }
 
-    heap->M = M;
-
     for(int i = (A->size() / 2);i >= 0; i--){
 
-        sink(A, M, i);
+        sink(A, i);
 
     }
 
@@ -113,14 +105,10 @@ struct heap* heapify(std::vector<std::pair<double, Vertex*>> *A){
 
 void decreaseKey(struct heap *Heap, struct vertex *v, double d){
 
-    std::unordered_map<Vertex*, int> m = *Heap->M;
+    int *idx = (int*)v->ptr;
 
-    int i = m[v];
+    (*Heap->A)[*idx].first = d;
 
-    // std::cout << i << ", " << Heap->A->size()<< std::endl;
-
-    (*Heap->A)[i].first = d;
-
-    climb(Heap->A, Heap->M, i);
+    climb(Heap->A, *idx);
 
 }

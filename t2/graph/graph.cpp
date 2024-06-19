@@ -79,3 +79,19 @@ struct graph* makeGraph(int i, int j){
     return new_graph;
 
 }
+
+
+void destroyGraph(struct graph *G){
+    printf(">destroy graph");
+
+    for(int i = 0; i < G->V->size(); i++){
+
+        free((*G->V)[i]);
+
+    }
+
+    free(G);
+
+    printf("<\n");
+
+}

@@ -41,7 +41,8 @@ void DijsktraHeap(struct graph G, struct vertex* root){
 
     // std::cout << "heapified" << std::endl;
 
-    while(PQ->A->size()){
+    // while(PQ->A->size()){
+    while(PQ->size){
 
         std::pair<double, Vertex*> p = heap_extract(PQ);
         // std::cout << "heap_extract" << std::endl;
@@ -108,6 +109,8 @@ void DijsktraFibHeap(struct graph G, struct vertex* root){
     while(PQ->n){
 
         std::pair<double, Vertex*> p = fibHeap_extract(PQ);
+        printf("== past fib extract (PQ=%lu)==\n", PQ->n);
+        printf("edges size = %lu\n", p.second->edges->size());
 
         for(long unsigned int i = 0; i < p.second->edges->size(); i++){
 

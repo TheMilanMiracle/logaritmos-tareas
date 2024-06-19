@@ -2,7 +2,7 @@ DIR = graph
 
 DEP = ${DIR}/graph.cpp ${DIR}/heap.cpp ${DIR}/dijsktra.cpp ${DIR}/fibonacci_heap.cpp
 
-FLAGS = -std=c++11 -O3
+FLAGS = -std=c++11
 
 run:
 	g++ ${FLAGS} main.cpp ${DEP} -o ./bin

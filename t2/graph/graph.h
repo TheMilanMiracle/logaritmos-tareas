@@ -6,7 +6,7 @@ typedef struct graph Graph;
 
 // Graphs
 struct vertex{
-    int idx;
+    void* ptr;
     std::vector<std::pair<struct vertex*, double>> *edges;
 };
 struct graph{
@@ -14,14 +14,15 @@ struct graph{
 };
 
 struct graph* makeGraph(int i, int j);
+void destroyGraph(struct graph *G);
 
 
 // Heaps
 typedef struct heap Heap;
 
 struct heap{
+    int size;
     std::vector<std::pair<double, struct vertex*>> *A;
-    std::unordered_map<struct vertex*, int> *M;
 };
 
 struct heap* heapify(std::vector<std::pair<double, struct vertex*>> *A);
@@ -34,9 +35,8 @@ typedef struct fibHeap FibHeap;
 typedef struct fibNode FibNode;
 
 struct fibHeap{
-    std::unordered_map<struct vertex*, struct fibNode*> *M;
-    struct fibNode *min, *roots;
-    unsigned long int n;
+    struct fibNode *min;
+    unsigned long int n, roots;
 };
 
 struct fibNode{

@@ -2,7 +2,7 @@
 
 #include "./graph/graph.h"
 
-std::chrono::time_point<std::chrono::system_clock> start, ref;
+std::chrono::time_point<std::chrono::system_clock> start, ref1, ref2, ref;
 std::string elapsed_time(std::chrono::time_point<std::chrono::system_clock> from){
 
     std::chrono::duration<double> time = std::chrono::system_clock::now() - from;
@@ -41,33 +41,70 @@ std::string elapsed_time(std::chrono::time_point<std::chrono::system_clock> from
 
 }
 
+std::ofstream results_file("./results_heap/v10e16.txt");
 
 int main(){
 
-    ref = std::chrono::system_clock::now();
+    start = std::chrono::system_clock::now();
 
-    unsigned long int v = 14;
-    unsigned long int e = 20;
+    std::vector<int> V = {10};
+    std::vector<int> E = {16};
 
-    Graph* G = makeGraph(v, e);
+    for(int i = 0; i < V.size(); i++){
 
-    std::cout << "> grafo construido en " << elapsed_time(ref) << std::endl;
+        for(int j = 0; j < E.size(); j++){
 
-    std::cout << "e*log(v) = " << (double) e * std::log2(v) << std::endl;
-    std::cout << "e+vlog(v) = " << (double) e + (double) v * std::log2(v) << std::endl;
- 
-    ref = std::chrono::system_clock::now();
-
-    DijsktraHeap(*G, (*G->V)[0]);
-
-    std::cout << "> dijsktra con heap " << elapsed_time(ref) << std::endl;
+            // printf("(i, j) = (%d, %d)\n", i, j);
 
 
-    ref = std::chrono::system_clock::now();
 
-    DijsktraFibHeap(*G, (*G->V)[0]);
+            // std::cout << "> grafo construido en " << elapsed_time(ref) << std::endl;
 
-    std::cout << "> dijsktra con fibonacci heap " << elapsed_time(ref) << std::endl;
+            // std::cout << "e*log(v) = " << (double) E[j] * std::log2(V[i]) << std::endl;
+            // std::cout << "e+vlog(v) = " << (double) E[j] + (double) V[i] * std::log2(V[i]) << std::endl;
+
+            // results_file << "=========================================================================================\n\n";
+            // results_file << "V = " << V[i] << ", E = "<< E[j] << "\n";
+        
+            // for(int k = 0; k < 1; k++){
+
+            //     ref = std::chrono::system_clock::now();
+
+            //     Graph* G = makeGraph(V[i], E[j]);
+            
+            //     ref1 = std::chrono::system_clock::now();
+
+            //     DijsktraHeap(*G, (*G->V)[0]);
+
+            //     // std::cout << "> dijsktra con heap " << elapsed_time(ref1) << std::endl;
+            //     results_file << elapsed_time(ref1) << "; ";
+
+            //     if(k % 5 == 4){results_file << "\n";}
+
+            //     destroyGraph(G);
+            
+            // }
+
+            // results_file << "\n=========================================================================================";
+
+            for(int k = 0; k < 1; k++){
+
+                Graph* G = makeGraph(V[i], E[j]);  
+
+                ref2 = std::chrono::system_clock::now();
+
+                DijsktraFibHeap(*G, (*G->V)[0]);
+
+                std::cout << "> dijsktra con fibonacci heap " << elapsed_time(ref2) << std::endl;
+
+                destroyGraph(G);
+            }
+
+
+        }
+    }
+
+    std::cout << "> main finished in " << elapsed_time(start) << std::endl;
 
 
     return 0;
