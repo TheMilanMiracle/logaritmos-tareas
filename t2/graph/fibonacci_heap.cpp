@@ -2,318 +2,228 @@
 
 #include "graph.h"
 
-void printList(FibNode *head){
+FibNode *newNode(double w, Vertex *v){
+    FibNode *node = (FibNode*) malloc(sizeof(FibNode));
 
-    FibNode *node = head->right;
+    node->w = w;
+    node->v = v;
 
-    printf("(%lu)->", (((long unsigned int)head<<48)>>48));
+    node->left = node;
+    node->right = node;
+    node->parent = NULL;
+    node->child = NULL;
 
-    while(node!=head){
-        printf("(%lu)->", (((long unsigned int)node<<48)>>48));
-        node = node->right;
-    }
+    node->degree = 0;
+    node->marked = false;
 
-    printf("\n");
-
+    return node;
 }
 
-void printDegrees(FibNode *A[], int n){
-
-    printf("[");
-    for(int i = 0; i < n; i++){
-        if(A[i]){printf("%lu, ", A[i]->degree);}
-        else{printf("NULL, ");}
-    }
-    printf("]\n");
-
-}
-
-
-
-
-void addNode(FibNode **head_ptr, FibNode *new_node){
-
-    FibNode *head = *head_ptr;
-
-    if(head == NULL){
-
-        new_node->left = new_node;
-        new_node->right = new_node;
-
-        *head_ptr = new_node;
-
+void addNode(FibNode **ptr, FibNode *node){
+    if(*ptr == NULL){
+        *ptr = node;
     }
     else{
+        node->left = *ptr;
+        node->right = (*ptr)->right;
 
-        new_node->left = head;
-        new_node->right = head->right;
+        (*ptr)->right->left = node;
+        (*ptr)->right = node;
 
-        head->right->left = new_node;
-        head->right = new_node;
-
-    }
-
-}
-
-void removeNode(FibNode **head_ptr, FibNode *node, long unsigned int nodes){
-
-    FibNode *head = *head_ptr;
-
-    if(nodes == 1){
-
-        head_ptr = NULL;
-
-    }
-    else{
-
-        if(head == node){
-
-            *head_ptr = node->right;
-
+        if(node->w < node->w){
+            *ptr = node;
         }
 
-        node->left->right = node->right;
-        node->right->left = node->left;
-
     }
+}
 
-    node->right = NULL;
-    node->left = NULL;
+void removeNode(FibNode **ptr, FibNode *node){
+    node->left->right = node->right;
+    node->right->left = node->left;
 
+    if(*ptr == node){
+        if(*ptr == (*ptr)->right){
+            *ptr = NULL;
+        }
+        else{
+            *ptr = node->right;
+        } 
+    }
 }
 
 
-void insert(FibHeap *H, double w, Vertex *v){
-
-    std::pair<double, Vertex*> p = std::make_pair(w, v);
-
-    FibNode *new_node = (FibNode*)malloc(sizeof(FibNode));
-
+void insert(FibHeap* H, double w, Vertex* v){
+    FibNode *new_node = newNode(w, v);
     v->ptr = new_node;
 
-    new_node->child = NULL;
-    new_node->parent = NULL;
-    new_node->left = NULL;
-    new_node->right = NULL;
-    new_node->degree = 0;
-    new_node->marked = false;
-    new_node->value = p;
-
     addNode(&H->min, new_node);
-    H->roots++;
-
-    if(w < H->min->value.first){
-
-        H->min = new_node;
-
-    }
-
     H->n++;
-
 }
 
-struct fibHeap* fibHeap_heapify(std::vector<std::pair<double, struct vertex*>> *A){
-    FibHeap *heap = (FibHeap*)malloc(sizeof(FibHeap));
+struct fibHeap *fibHeap_heapify(std::vector<std::pair<double, struct vertex*>> *A){
+    FibHeap *heap = (FibHeap*) malloc(sizeof(FibHeap));
 
     heap->min = NULL;
     heap->n = 0;
 
     for(long unsigned int i = 0; i < A->size(); i++){
-
         insert(heap, (*A)[i].first, (*A)[i].second);
-
     }
 
     return heap;
-
 }
 
 
 void link(FibHeap *H, FibNode *y, FibNode *x){
-    addNode(&(x->child), y);
+    removeNode(&H->min, y);
 
-    x->degree++;
+    y->left = y;
+    y->right = y;    
+    if(x->child == NULL){
+        x->child = y;
+    }
+    else{
+        y->right = x->child;
+        y->left = x->child->left;
 
-    y->marked = false;
-
+        x->child->left->right = y;
+        x->child->left = y;
+    }
+    
     y->parent = x;
-
+    x->degree++;
+    y->marked = false;
 }
 
 void consolidate(FibHeap *H){
-
-    int D = std::log2(H->n) + 1;
-
+    int D = std::log2(H->n) + 2;
     FibNode *A[D];
 
     for(int i = 0; i < D; i++){
-
         A[i] = NULL;
-
     }
 
-    FibNode *w = H->min, *x, *y, *next = w->right;
+    FibNode *w = H->min;
 
-    for(int i = 0; i < H->roots; i++){
-        x = w;
-        unsigned long int d = w->degree;
-
-        w->right = NULL;
-        w->left = NULL;
+    do{
+        FibNode *x = w;
+        long unsigned int d = x->degree;
 
         while(A[d] != NULL){
+            FibNode *y = A[d];
 
-            y = A[d];
-
-            if (x->value.first > y->value.first) {
-
+            if(x->w > y->w){
                 std::swap(x, y);
-
             }
 
             link(H, y, x);
 
             A[d] = NULL;
             d++;
-
         }
 
         A[d] = x;
-
-        w = next;
-        if(w){next = w->right;}
-
-    }
-
-    H->roots = 0;
+        w = w->right;
+    }while(w != H->min);
+    
     H->min = NULL;
 
     for(int i = 0; i < D; i++){
-
-        if(A[i]){
-
-            addNode(&H->min, A[i]);
-            H->roots++;
-
-            if(A[i]->value.first < H->min->value.first){
-
-                H->min = A[i];
-
+        if(A[i] != NULL){
+            if(H->min == NULL){
+                A[i]->left = A[i];
+                A[i]->right = A[i];
             }
 
+            addNode(&H->min, A[i]);
         }
-
     }
-
 }
 
 std::pair<double, struct vertex*> fibHeap_extract(struct fibHeap *H){
+    if(H->min){
+        FibNode *z = H->min;
+        
+        if(z->child){
+            FibNode *x = z->child;
 
-    std::pair<double, Vertex*> p = {0, NULL};
+            do{
+                FibNode *next = x->right;
 
-    FibNode *z = H->min;
-
-    if(z){
-
-        FibNode *child = z->child, *node = child;
-
-        for(int i = 0; i < z->degree; i++){
-
-            FibNode *next = node->right;
-
-            removeNode(&z->child, node, z->degree);
-
-            addNode(&H->min, node);
-            H->roots++;
-
-            node->parent = NULL;
-
-            node = next;
-
+                addNode(&H->min, x);
+                x->parent = NULL;
+                
+                x = next;
+            }while(x != z->child);
         }
 
-        FibNode *right = z->right;
+        removeNode(&H->min, z);
 
-        removeNode(&H->min, z, H->roots);
-        H->roots--;
-
-        if(z == right){
-
-            H->min = NULL;
-
-        }
-        else{
-
-            H->min = right;
+        if(z != z->right){
+            H->min = z->right;
             consolidate(H);
-
         }
-
-        p = z->value;
-
-        // free(z);
 
         H->n--;
-
+        std::pair<double, Vertex*> r = {z->w, z->v};
+        free(z);
+        return r;
     }
-
-    return p;
-
+    else{
+        return {DBL_MAX, NULL};
+    }
 }
 
 
 void cut(FibHeap *H, FibNode *x, FibNode *y){
+    if(x == x->right){
+        y->child = NULL;
+    }
+    else{
+        x->right->left = x->left;
+        x->left->right = x->right;
 
-    removeNode(&y->child, x, y->degree);
+        if(y->child == x){
+            y->child = x->right;
+        }
+    }
     y->degree--;
 
     addNode(&H->min, x);
-    H->roots++;
-
     x->parent = NULL;
     x->marked = false;
-
 }
 
 void cascading_cut(FibHeap *H, FibNode *y){
-
-    FibNode* z = y->parent;
+    FibNode *z = y->parent;
 
     if(z){
-
-        if(y->marked == false){
-
+        if(!y->marked){
             y->marked = true;
-
         }
         else{
-
             cut(H, y, z);
             cascading_cut(H, z);
-
         }
-
     }
-
 }
 
-void fibHeap_decrease_key(struct fibHeap *H, struct vertex *v, double w){
+void fibHeap_decrease_key(struct fibHeap *H, struct vertex* v, double w){
+    FibNode *x = (FibNode*) v->ptr;
 
-    FibNode *x = (FibNode*)v->ptr, *y;
+    if(x->w < w){return;}
 
-    x->value.first = w;
+    x->w = w;
 
-    if(y && w < y->value.first){
+    FibNode* y = x->parent;
 
+    if(y && x->w < y->w){
         cut(H, x, y);
         cascading_cut(H, y);
-
     }
 
-    if(w < H->min->value.first){
-
+    if(x->w < H->min->w){
         H->min = x;
-
     }
 
 }
