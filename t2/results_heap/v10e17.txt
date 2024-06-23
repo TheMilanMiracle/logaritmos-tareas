@@ -1,15 +1,18 @@
 =========================================================================================
 
-V = 10, E = 17
-0.126773 seconds; 0.137254 seconds; 0.126529 seconds; 0.129257 seconds; 0.136167 seconds; 
-0.124626 seconds; 0.130899 seconds; 0.139080 seconds; 0.135355 seconds; 0.130266 seconds; 
-0.138598 seconds; 0.136714 seconds; 0.135465 seconds; 0.133232 seconds; 0.136278 seconds; 
-0.141016 seconds; 0.136343 seconds; 0.129755 seconds; 0.132062 seconds; 0.128344 seconds; 
-0.133265 seconds; 0.134119 seconds; 0.119962 seconds; 0.122724 seconds; 0.124505 seconds; 
-0.121530 seconds; 0.124364 seconds; 0.124076 seconds; 0.120739 seconds; 0.119887 seconds; 
-0.113442 seconds; 0.113905 seconds; 0.109758 seconds; 0.114618 seconds; 0.114847 seconds; 
-0.111462 seconds; 0.124466 seconds; 0.121843 seconds; 0.128341 seconds; 0.130403 seconds; 
-0.125427 seconds; 0.125358 seconds; 0.124075 seconds; 0.127740 seconds; 0.125659 seconds; 
-0.124391 seconds; 0.124270 seconds; 0.128482 seconds; 0.120940 seconds; 0.130865 seconds; 
+===			V = 10, E = 17			===
+
+0.123909 seconds; 0.124400 seconds; 0.119381 seconds; 0.116934 seconds; 0.127845 seconds; 
+0.112938 seconds; 0.116208 seconds; 0.115680 seconds; 0.115880 seconds; 0.119866 seconds; 
+0.123990 seconds; 0.112657 seconds; 0.120473 seconds; 0.126077 seconds; 0.124277 seconds; 
+0.119900 seconds; 0.124477 seconds; 0.127296 seconds; 0.131257 seconds; 0.129335 seconds; 
+0.115100 seconds; 0.112676 seconds; 0.115756 seconds; 0.110741 seconds; 0.115184 seconds; 
+0.114312 seconds; 0.116563 seconds; 0.120275 seconds; 0.116120 seconds; 0.118805 seconds; 
+0.117294 seconds; 0.119362 seconds; 0.115816 seconds; 0.119991 seconds; 0.120923 seconds; 
+0.121970 seconds; 0.118937 seconds; 0.118729 seconds; 0.120291 seconds; 0.116925 seconds; 
+0.130870 seconds; 0.127577 seconds; 0.122442 seconds; 0.126518 seconds; 0.121519 seconds; 
+0.129984 seconds; 0.121667 seconds; 0.126019 seconds; 0.122348 seconds; 0.118513 seconds; 
+
+===		avg time = 0.12052		===
 
 =========================================================================================
