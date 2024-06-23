@@ -1,0 +1,18 @@
+=========================================================================================
+
+===			V = 12, E = 18			===
+
+0.117525 seconds; 0.125665 seconds; 0.119004 seconds; 0.124145 seconds; 0.125758 seconds; 
+0.125069 seconds; 0.140678 seconds; 0.116341 seconds; 0.115767 seconds; 0.112337 seconds; 
+0.113565 seconds; 0.154133 seconds; 0.127760 seconds; 0.127126 seconds; 0.124510 seconds; 
+0.127845 seconds; 0.113581 seconds; 0.115838 seconds; 0.109638 seconds; 0.115859 seconds; 
+0.112998 seconds; 0.114307 seconds; 0.162754 seconds; 0.126743 seconds; 0.127214 seconds; 
+0.129131 seconds; 0.193736 seconds; 0.160220 seconds; 0.130124 seconds; 0.160449 seconds; 
+0.163293 seconds; 0.175514 seconds; 0.147066 seconds; 0.137988 seconds; 0.145369 seconds; 
+0.118280 seconds; 0.115372 seconds; 0.117721 seconds; 0.115809 seconds; 0.116534 seconds; 
+0.119285 seconds; 0.188372 seconds; 0.222131 seconds; 0.154457 seconds; 0.123303 seconds; 
+0.137842 seconds; 0.111240 seconds; 0.117005 seconds; 0.114078 seconds; 0.111983 seconds; 
+
+===		avg time = 0.132449		===
+
+=========================================================================================
