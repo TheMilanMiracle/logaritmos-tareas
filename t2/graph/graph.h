@@ -36,11 +36,12 @@ typedef struct fibNode FibNode;
 
 struct fibHeap{
     struct fibNode *min;
-    unsigned long int n, roots;
+    unsigned long int n;
 };
 
 struct fibNode{
-    std::pair<double, struct vertex*> value;
+    double w;
+    Vertex *v;
     struct fibNode *parent, *child, *left, *right; 
     bool marked;
     unsigned long int degree;

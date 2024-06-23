@@ -2,6 +2,11 @@
 
 #include "graph.h"
 
+bool isNull(FibNode *ptr){
+    if(ptr == 0x0 || ptr == (void*)0x1 || ptr == (void*)0x2 || ptr == (void*)0x3 || ptr == (void*)0x4){return true;}
+    return false;
+}
+
 FibNode *newNode(double w, Vertex *v){
     FibNode *node = (FibNode*) malloc(sizeof(FibNode));
 
@@ -33,7 +38,6 @@ void addNode(FibNode **ptr, FibNode *node){
         if(node->w < node->w){
             *ptr = node;
         }
-
     }
 }
 
@@ -43,6 +47,7 @@ void removeNode(FibNode **ptr, FibNode *node){
 
     if(*ptr == node){
         if(*ptr == (*ptr)->right){
+            printf("*ptr to null\n");
             *ptr = NULL;
         }
         else{
@@ -99,14 +104,21 @@ void consolidate(FibHeap *H){
     int D = std::log2(H->n) + 2;
     FibNode *A[D];
 
+    std::vector<FibNode*> Nodes;
+
     for(int i = 0; i < D; i++){
         A[i] = NULL;
     }
 
-    FibNode *w = H->min;
+    Nodes.push_back(H->min);
+    FibNode *w = H->min->right;
+    while(w != H->min){
+        Nodes.push_back(w);
+        w = w->right;
+    }
 
-    do{
-        FibNode *x = w;
+    for(int i = 0; i < Nodes.size(); i++){
+        FibNode *x = Nodes[i];
         long unsigned int d = x->degree;
 
         while(A[d] != NULL){
@@ -123,8 +135,7 @@ void consolidate(FibHeap *H){
         }
 
         A[d] = x;
-        w = w->right;
-    }while(w != H->min);
+    }
     
     H->min = NULL;
 
@@ -197,7 +208,7 @@ void cut(FibHeap *H, FibNode *x, FibNode *y){
 void cascading_cut(FibHeap *H, FibNode *y){
     FibNode *z = y->parent;
 
-    if(z){
+    if(z != NULL){
         if(!y->marked){
             y->marked = true;
         }
