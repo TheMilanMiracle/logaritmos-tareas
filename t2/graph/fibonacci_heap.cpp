@@ -2,11 +2,6 @@
 
 #include "graph.h"
 
-bool isNull(FibNode *ptr){
-    if(ptr == 0x0 || ptr == (void*)0x1 || ptr == (void*)0x2 || ptr == (void*)0x3 || ptr == (void*)0x4){return true;}
-    return false;
-}
-
 FibNode *newNode(double w, Vertex *v){
     FibNode *node = (FibNode*) malloc(sizeof(FibNode));
 
@@ -46,13 +41,7 @@ void removeNode(FibNode **ptr, FibNode *node){
     node->right->left = node->left;
 
     if(*ptr == node){
-        if(*ptr == (*ptr)->right){
-            printf("*ptr to null\n");
-            *ptr = NULL;
-        }
-        else{
-            *ptr = node->right;
-        } 
+        *ptr = node->right;
     }
 }
 
@@ -112,7 +101,7 @@ void consolidate(FibHeap *H){
 
     Nodes.push_back(H->min);
     FibNode *w = H->min->right;
-    while(w != H->min){
+    while(w != Nodes[0]){
         Nodes.push_back(w);
         w = w->right;
     }
@@ -152,32 +141,36 @@ void consolidate(FibHeap *H){
 }
 
 std::pair<double, struct vertex*> fibHeap_extract(struct fibHeap *H){
-    if(H->min){
+    if(H->min != NULL){
         FibNode *z = H->min;
         
-        if(z->child){
-            FibNode *x = z->child;
+        if(z->child != NULL){
+            std::vector<FibNode*> Childs;
+            Childs.push_back(z->child);
+            FibNode *c = z->child->right;
+            while(c != Childs[0]){
+                Childs.push_back(c);
+                c = c->right;
+            }
 
-            do{
-                FibNode *next = x->right;
-
-                addNode(&H->min, x);
-                x->parent = NULL;
-                
-                x = next;
-            }while(x != z->child);
+            for(unsigned long int i = 0; i < Childs.size(); i++){
+                Childs[i]->parent = NULL;
+                addNode(&H->min, Childs[i]);
+            }
         }
 
         removeNode(&H->min, z);
 
-        if(z != z->right){
+        if(H->n == 1){
+            H->min = NULL;
+        } 
+        else{
             H->min = z->right;
             consolidate(H);
         }
 
         H->n--;
         std::pair<double, Vertex*> r = {z->w, z->v};
-        free(z);
         return r;
     }
     else{
