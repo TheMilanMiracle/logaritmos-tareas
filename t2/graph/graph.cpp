@@ -72,17 +72,12 @@ struct graph* makeGraph(int i, int j){
         e--;
     }
 
-
-    std::cout << "> "<< v <<" nodos | "<< count<< " aristas" << std::endl;
-
-
     return new_graph;
 
 }
 
 
 void destroyGraph(struct graph *G){
-    printf(">destroy graph");
 
     for(int i = 0; i < G->V->size(); i++){
 
@@ -91,7 +86,5 @@ void destroyGraph(struct graph *G){
     }
 
     free(G);
-
-    printf("<\n");
 
 }

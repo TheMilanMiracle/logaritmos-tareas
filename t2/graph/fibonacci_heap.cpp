@@ -69,8 +69,7 @@ struct fibHeap *fibHeap_heapify(std::vector<std::pair<double, struct vertex*>> *
 
 
 void link(FibHeap *H, FibNode *y, FibNode *x){
-    removeNode(&H->min, y);
-
+    removeNode(&H->min, y);  
     y->left = y;
     y->right = y;    
     if(x->child == NULL){
@@ -101,8 +100,19 @@ void consolidate(FibHeap *H){
 
     Nodes.push_back(H->min);
     FibNode *w = H->min->right;
+    int aux = 0;
     while(w != Nodes[0]){
-        Nodes.push_back(w);
+        for (int r = Nodes.size()-1; r >= 0; r--){
+            if (w == Nodes[r]){
+                aux = 1;
+                break;
+            }
+        }
+        if (aux){
+            break;            
+        }
+
+        Nodes.push_back(w);    
         w = w->right;
     }
 
@@ -116,8 +126,9 @@ void consolidate(FibHeap *H){
             if(x->w > y->w){
                 std::swap(x, y);
             }
-
+            
             link(H, y, x);
+            
 
             A[d] = NULL;
             d++;
@@ -127,7 +138,6 @@ void consolidate(FibHeap *H){
     }
     
     H->min = NULL;
-
     for(int i = 0; i < D; i++){
         if(A[i] != NULL){
             if(H->min == NULL){
@@ -142,40 +152,57 @@ void consolidate(FibHeap *H){
 
 std::pair<double, struct vertex*> fibHeap_extract(struct fibHeap *H){
     if(H->min != NULL){
+        
         FibNode *z = H->min;
         
         if(z->child != NULL){
+            
             std::vector<FibNode*> Childs;
             Childs.push_back(z->child);
             FibNode *c = z->child->right;
+            int aux = 0;
             while(c != Childs[0]){
+                for (int r = Childs.size()-1; r >= 0; r--){
+                    if (c == Childs[r]){
+                        aux = 1;
+                        break;
+                    }
+                }
+                if (aux){
+                    break;            
+                }
                 Childs.push_back(c);
                 c = c->right;
             }
-
             for(unsigned long int i = 0; i < Childs.size(); i++){
                 Childs[i]->parent = NULL;
                 addNode(&H->min, Childs[i]);
             }
+            
         }
-
+        
         removeNode(&H->min, z);
-
+        
         if(H->n == 1){
             H->min = NULL;
         } 
         else{
             H->min = z->right;
-            consolidate(H);
+            
+            consolidate(H);   
+                
         }
-
+          
         H->n--;
         std::pair<double, Vertex*> r = {z->w, z->v};
+        
         return r;
+        
     }
     else{
         return {DBL_MAX, NULL};
     }
+    
 }
 
 

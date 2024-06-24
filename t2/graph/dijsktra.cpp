@@ -4,7 +4,6 @@
 #include "graph.h"
 
 
-// std::pair<std::map<struct vertex*, struct vertex*>, std::map<struct vertex*, double>> DijsktraHeap(struct graph G, struct vertex* root){
 void DijsktraHeap(struct graph G, struct vertex* root){
 
     std::map<Vertex*, double> *dists = new std::map<Vertex*, double>;
@@ -34,18 +33,11 @@ void DijsktraHeap(struct graph G, struct vertex* root){
 
     }
 
-    // std::cout << &Q << std::endl;
-    // std::cout << Q.size() << std::endl;
-
     Heap* PQ = heapify(&Q);
 
-    // std::cout << "heapified" << std::endl;
-
-    // while(PQ->A->size()){
     while(PQ->size){
 
         std::pair<double, Vertex*> p = heap_extract(PQ);
-        // std::cout << "heap_extract" << std::endl;
 
         for(int i = 0; i < p.second->edges->size(); i++){
 
@@ -59,8 +51,6 @@ void DijsktraHeap(struct graph G, struct vertex* root){
                 (*prevs)[u] = v;
 
                 decreaseKey(PQ, u, (*dists)[v] + w);
-                // std::cout << "decreaseKey" << std::endl;
-
 
             };
 
@@ -68,13 +58,9 @@ void DijsktraHeap(struct graph G, struct vertex* root){
 
     }
 
-    // std::pair<std::map<Vertex*, Vertex*>, std::map<Vertex*, double>> ret = {(*prevs), (*dists)};
-
-    // return ret;
 }
 
 
-// std::pair<std::unordered_map<struct vertex*, struct vertex*>, std::unordered_map<struct vertex*, double>> DijsktraFibHeap(struct graph G, struct vertex* root){
 void DijsktraFibHeap(struct graph G, struct vertex* root){
 
     std::unordered_map<Vertex*, double> *dists = new std::unordered_map<Vertex*, double>;
@@ -109,8 +95,6 @@ void DijsktraFibHeap(struct graph G, struct vertex* root){
     while(PQ->n){
 
         std::pair<double, Vertex*> p = fibHeap_extract(PQ);
-        printf("== past fib extract (PQ=%lu)==\n", PQ->n);
-        printf("edges size = %lu\n", p.second->edges->size());
 
         for(long unsigned int i = 0; i < p.second->edges->size(); i++){
 
@@ -131,9 +115,4 @@ void DijsktraFibHeap(struct graph G, struct vertex* root){
 
     }
 
-    // std::pair<std::unordered_map<Vertex*, Vertex*>, std::unordered_map<Vertex*, double>> *ret = new std::pair<std::unordered_map<Vertex*, Vertex*>, std::unordered_map<Vertex*, double>>;
-    // ret->first = prevs;
-    // ret->second = dists;
-
-    // return ret;
 }

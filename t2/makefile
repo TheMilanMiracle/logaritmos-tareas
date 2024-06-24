@@ -1,20 +1,23 @@
+
+WD = ./
+MAIN = ${WD}main.cpp
+BIN = bin
+
 DIR = graph
 
 DEP = ${DIR}/graph.cpp ${DIR}/heap.cpp ${DIR}/dijsktra.cpp ${DIR}/fibonacci_heap.cpp
 
 FLAGS = -std=c++11
 
+structure = 
+v = 
+e = 
+n = 	
+
 run:
-	g++ ${FLAGS} main.cpp ${DEP} -o ./bin
-	./bin
-	rm ./bin
+	g++ ${FLAGS} ${MAIN} ${DEP} -o ${WD}${BIN}
+	${WD}${BIN} "$(structure)" "${v}" "${e}" "${n}"
+	rm ${WD}${BIN}
 
-run-san:
-	g++ ${FLAGS} -fsanitize=address test.cpp -o ./bin
-	./bin
-	rm ./bin
-
-gdb:
-	g++ ${FLAGS} -g -D_GLIBCXX_DEBUG main.cpp ${DEP} -o ./bin
-	gdb ./bin
-	rm ./bin
+clean:
+	rm -f ./*.txt rm *bin*
