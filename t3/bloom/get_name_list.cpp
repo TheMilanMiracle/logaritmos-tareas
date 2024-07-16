@@ -5,43 +5,34 @@ std::vector<std::string> get_name_list(double p, long int N){
 
     std::vector<std::string> A(N);
 
-    FILE *film = fopen("./bloom/Film-Names.csv", "r");
-    FILE *names = fopen("./bloom/Popular-Baby-Names-Final.csv", "r");
+    std::ifstream films("./bloom/Film-Names.csv");
+    std::ifstream names("./bloom/Popular-Baby-Names-Final.csv");
 
-    if(!film){std::cout << "no film" << std::endl;}
-    if(!names){std::cout << "no names" << std::endl;}
+    unsigned long int n = N * p, f = N * (1.0 - p);
 
-    unsigned long int n = N * (1.0 - p), f = N * p;
+    if(n + f < n){n++;}
 
     std::cout << f << ", " << n << std::endl;
 
-    char buff[1024];
+    std::string buff;
 
     while(f--){
+        std::getline(films, buff);
 
-        fgets(buff, 1024, film);
-
-        std::string s(buff);
-
-        s[s.size() - 1] = 0;
-
-        A[--N] = s;
-
+        buff += '\%';
+        
+        A[--N] = buff;
     }
 
-    fgets(buff, 1024, names);
-    n++;
+    std::getline(names, buff);
     while(n--){
-
-        fgets(buff, 1024, names);
-
-        std::string s(buff);
-
-        s[s.size() - 1] = 0;
-
-        A[--N] = s;
-
+        std::getline(names, buff);
+        
+        A[--N] = buff;
     }
+
+    films.close();
+    names.close();
 
     return A;
 

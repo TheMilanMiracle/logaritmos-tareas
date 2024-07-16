@@ -2,27 +2,22 @@
 #include "./bloom.h"
 
 long int sec_search(std::vector<std::string> A){
-    long int counter = 0;
+    long int count = 0;
 
-    FILE *names = fopen("./bloom/Popular-Baby-Names-Final.csv", "r");
-
+    std::ifstream names("./bloom/Popular-Baby-Names-Final.csv");
+     std::string buff;
     for(long unsigned int i = 0; i < A.size(); i++){
-        char buff[512];
 
-        while(fgets(buff, 512, names)){
-            std::string s(buff);
-
-            s[s.size() - 1] = 0;
-
-            if(s.size() < A[i].size()){continue;}
-
-            for(int j = 0; j < s.size() - A[i].size(); j++){
-                if(s.find(A[i], j) != std::string::npos){counter++;}
+        while(std::getline(names, buff)){
+            if(buff.find(A[i]) != std::string::npos){
+                std::cout << "found " << A[i] << " in " << buff << std::endl;
+                count++;
             }
         }
 
-        fseek(names, 0, SEEK_SET);
+        names.clear();
+        names.seekg(0, std::ios::beg);
     }
 
-    return counter;
+    return count;
 }
