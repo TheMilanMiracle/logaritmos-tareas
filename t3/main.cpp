@@ -1,32 +1,6 @@
 #include <bits/stdc++.h>
 #include "./bloom/bloom.h"
 
-int simpleHash(std::string str) {
-    int hash = 0;
-    for (char ch : str) {
-        hash += ch;
-    }
-    return sqrt(pow(hash, 2));
-}
-
-int djb2Hash(std::string str) {
-    int hash = 5381;
-    for (char ch : str) {
-        hash = ((hash << 5) + hash) + ch; // hash * 33 + ch
-    }
-    return sqrt(pow(hash, 2));
-}
-
-int fnv1aHash(std::string str) {
-    int hash = 14695981039346656037ULL;
-    for (char ch : str) {
-        hash ^= static_cast<size_t>(ch);
-        hash *= 1099511628211ULL;
-    }
-    return sqrt(pow(hash, 2));
-}
-
-
 void printBinary(unsigned int num) {
     int numBits = sizeof(u_int8_t) * 8;
     int mask = 1 << (numBits - 1);
@@ -46,7 +20,7 @@ void printBits(BloomFilter *filter){
 
 
 std::chrono::time_point<std::chrono::system_clock> start, ref;
-long int N, M;
+long int N, M, K;
 double P;
 
 std::pair<std::string, double> elapsed_time(std::chrono::time_point<std::chrono::system_clock> from){
@@ -79,7 +53,7 @@ void main_in(int argc, char *argv[]){
     start = std::chrono::system_clock::now();
 
     if(argc < 3){
-        fprintf(stderr, "Uso: make run N=\"{int}\" P=\"{double}\"\n");
+        fprintf(stderr, "Uso: make run N=\"{int}\" P=\"{double}\" M=\"{int}\" K=\"{int}\"\n");
         exit(-1);
     }
 
@@ -88,6 +62,8 @@ void main_in(int argc, char *argv[]){
     P = atof(argv[2]);
 
     M = atoi(argv[3]);
+
+    K = atoi(argv[4]);
 }
 
 void main_out(){
@@ -103,9 +79,7 @@ int main(int argc, char *argv[]){
 
     std::vector<std::string> Names = pair.first, Films = pair.second;
 
-    int (*H[3])(std::string) = {simpleHash, djb2Hash, fnv1aHash};
-
-    BloomFilter *filter = makeBloomFilter(M, 3, H);
+    BloomFilter *filter = makeBloomFilter(M, K);
 
     for(std::string s : Names){
         bloomInsert(filter, s);
@@ -138,6 +112,7 @@ int main(int argc, char *argv[]){
     std::cout << "\twith "<< fake_positives <<" fake positives (error=" << ((double)fake_positives/N) * 100.0<< "%)" << std::endl;
 
     main_out();
+
 
     return 0;
 }
