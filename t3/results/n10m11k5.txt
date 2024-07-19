@@ -1,0 +1,51 @@
+=========================================================================================
+
+	N = 1024	p = 0	M = 2048	k = 5
+
+Search without filter avg time = 2.86084
+
+Search with filter avg time = 0.000225937
+Avg fake positives = 0
+Avg error = 0%
+
+=========================================================================================
+
+	N = 1024	p = 0.25	M = 2048	k = 5
+
+Search without filter avg time = 2.97193
+
+Search with filter avg time = 0.872819
+Avg fake positives = 17
+Avg error = 1.66016%
+
+=========================================================================================
+
+	N = 1024	p = 0.5	M = 2048	k = 5
+
+Search without filter avg time = 3.09619
+
+Search with filter avg time = 1.91957
+Avg fake positives = 93
+Avg error = 9.08203%
+
+=========================================================================================
+
+	N = 1024	p = 0.75	M = 2048	k = 5
+
+Search without filter avg time = 3.21065
+
+Search with filter avg time = 2.83825
+Avg fake positives = 117
+Avg error = 11.4258%
+
+=========================================================================================
+
+	N = 1024	p = 1	M = 2048	k = 5
+
+Search without filter avg time = 3.28226
+
+Search with filter avg time = 3.31227
+Avg fake positives = 0
+Avg error = 0%
+
+=========================================================================================
