@@ -57,59 +57,87 @@ void main_in(int argc, char *argv[]){
         exit(-1);
     }
 
-    N = atoi(argv[1]);
+    N = std::pow(2, atoi(argv[1]));
 
-    P = atof(argv[2]);
+    M = std::pow(2, atoi(argv[2]));
 
-    M = atoi(argv[3]);
-
-    K = atoi(argv[4]);
+    K = atoi(argv[3]);
 }
 
 void main_out(){
     std::cout << "> main exited after " << elapsed_time(start).first << std::endl;
 }
 
+std::ofstream results_file("./results/n12m13k10.txt");
 
 int main(int argc, char *argv[]){
 
+    std::vector<float> P = {0.0, 1.0/4.0, 1.0/2.0, 3.0/4.0, 1.0};
+
     main_in(argc, argv);
 
-    std::pair<std::vector<std::string>, std::vector<std::string>> pair = get_name_list(P, N);
+    for(float p : P){
+        results_file << "=========================================================================================\n\n";
+        results_file << "\tN = "<< N << "\tp = "<< p << "\tM = " << M << "\tk = "<< K << "\n\n"; 
 
-    std::vector<std::string> Names = pair.first, Films = pair.second;
+        std::pair<std::vector<std::string>, std::vector<std::string>> pair = get_name_list(p, N);
 
-    BloomFilter *filter = makeBloomFilter(M, K);
+        std::vector<std::string> Names = pair.first, Films = pair.second;
 
-    for(std::string s : Names){
-        bloomInsert(filter, s);
-    }
+        BloomFilter *filter = makeBloomFilter(M, K);
 
-    ref = std::chrono::system_clock::now();
-    for(std::string s : Names){
-        sec_search(s);
-    }
-    for(std::string s : Films){
-        sec_search(s);
-    }
-    
-    std::cout << "Search without filter ended after " << elapsed_time(ref).first << std::endl;
-
-    long int fake_positives = 0;
-    ref = std::chrono::system_clock::now();
-
-    for(std::string s : Names){
-        if(bloomLook(filter, s)){sec_search(s);}
-    }
-    for(std::string s : Films){
-        if(bloomLook(filter, s)){
-            sec_search(s);
-            fake_positives++;
+        for(std::string s : Names){
+            bloomInsert(filter, s);
         }
+
+        int loops = 5;
+
+        double total_time = 0.0; 
+        for(int i = 0; i < loops; i++){
+            ref = std::chrono::system_clock::now();
+            
+            for(std::string s : Names){
+                sec_search(s);
+            }
+            for(std::string s : Films){
+                sec_search(s);
+            }
+
+            total_time += elapsed_time(ref).second;
+        }
+        
+        results_file << "Search without filter avg time = " << (double) total_time / loops << "\n\n";
+        
+        total_time = 0.0; 
+        int total_fp = 0;
+        for(int i = 0; i < loops; i++){
+            long int fake_positives = 0;
+            ref = std::chrono::system_clock::now();
+
+            for(std::string s : Names){
+                if(bloomLook(filter, s)){sec_search(s);}
+            }
+            for(std::string s : Films){
+                if(bloomLook(filter, s)){
+                    sec_search(s);
+                    fake_positives++;
+                }
+            }
+
+            total_fp += fake_positives;
+            total_time += elapsed_time(ref).second;
+        }
+        // std::cout << "Search without filter ended after " << elapsed_time(ref).first << std::endl;
+        // std::cout << "\twith "<< fake_positives <<" fake positives (error=" << ((double)fake_positives/N) * 100.0<< "%)" << std::endl;
+
+        results_file << "Search with filter avg time = " << (double) total_time / loops << "\n";
+        results_file << "Avg fake positives = " << (double) total_fp / loops << "\n";
+        results_file << "Avg error = " << ((double) ((double) total_fp / loops) / N) * 100.0 << "%\n\n";
+
+        destroyBloomFilter(filter);
     }
 
-    std::cout << "Search without filter ended after " << elapsed_time(ref).first << std::endl;
-    std::cout << "\twith "<< fake_positives <<" fake positives (error=" << ((double)fake_positives/N) * 100.0<< "%)" << std::endl;
+    results_file << "=========================================================================================";
 
     main_out();
 

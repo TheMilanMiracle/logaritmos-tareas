@@ -5,7 +5,6 @@ DIR = ./bloom
 DEP = ${DIR}/get_name_list.cpp ${DIR}/search.cpp ${DIR}/bloom-filter.cpp
 
 N =
-P =
 M =
 K =
 
