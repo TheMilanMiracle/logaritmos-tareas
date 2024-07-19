@@ -1,0 +1,51 @@
+=========================================================================================
+
+	N = 16384	p = 0	M = 32768	k = 15
+
+Time for search without filter = 60.461
+
+Time for search with filter = 0.013335
+Fake positives = 0
+Error = 0%
+
+=========================================================================================
+
+	N = 16384	p = 0.25	M = 32768	k = 15
+
+Time for search without filter = 62.3017
+
+Time for search with filter = 28.0086
+Fake positives = 2346
+Error = 14.3188%
+
+=========================================================================================
+
+	N = 16384	p = 0.5	M = 32768	k = 15
+
+Time for search without filter = 70.3786
+
+Time for search with filter = 61.834
+Fake positives = 5852
+Error = 35.7178%
+
+=========================================================================================
+
+	N = 16384	p = 0.75	M = 32768	k = 15
+
+Time for search without filter = 78.4375
+
+Time for search with filter = 81.8623
+Fake positives = 3894
+Error = 23.7671%
+
+=========================================================================================
+
+	N = 16384	p = 1	M = 32768	k = 15
+
+Time for search without filter = 70.2156
+
+Time for search with filter = 61.1603
+Fake positives = 0
+Error = 0%
+
+=========================================================================================

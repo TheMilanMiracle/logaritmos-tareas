@@ -1,0 +1,51 @@
+=========================================================================================
+
+	N = 65536	p = 0	M = 131072	k = 5
+
+Time for search without filter = 182.284
+
+Time for search with filter = 0.0159619
+Fake positives = 0
+Error = 0%
+
+=========================================================================================
+
+	N = 65536	p = 0.25	M = 131072	k = 5
+
+Time for search without filter = 190.234
+
+Time for search with filter = 54.819
+Fake positives = 928
+Error = 1.41602%
+
+=========================================================================================
+
+	N = 65536	p = 0.5	M = 131072	k = 5
+
+Time for search without filter = 195.612
+
+Time for search with filter = 119.978
+Fake positives = 6229
+Error = 9.5047%
+
+=========================================================================================
+
+	N = 65536	p = 0.75	M = 131072	k = 5
+
+Time for search without filter = 198.279
+
+Time for search with filter = 175.36
+Fake positives = 7218
+Error = 11.0138%
+
+=========================================================================================
+
+	N = 65536	p = 1	M = 131072	k = 5
+
+Time for search without filter = 204.023
+
+Time for search with filter = 201.609
+Fake positives = 0
+Error = 0%
+
+=========================================================================================

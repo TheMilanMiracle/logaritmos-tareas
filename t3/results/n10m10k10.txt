@@ -1,51 +1,51 @@
 =========================================================================================
 
-	N = 1024	p = 0	M = 1024	k = 10
+	N = 1024	p = 0	M = 2048	k = 10
 
-Search without filter avg time = 2.82679
+Time for search without filter = 3.2106
 
-Search with filter avg time = 0.000231984
-Avg fake positives = 0
-Avg error = 0%
-
-=========================================================================================
-
-	N = 1024	p = 0.25	M = 1024	k = 10
-
-Search without filter avg time = 2.9351
-
-Search with filter avg time = 1.70326
-Avg fake positives = 322
-Avg error = 31.4453%
+Time for search with filter = 0.000715288
+Fake positives = 0
+Error = 0%
 
 =========================================================================================
 
-	N = 1024	p = 0.5	M = 1024	k = 10
+	N = 1024	p = 0.25	M = 2048	k = 10
 
-Search without filter avg time = 3.06486
+Time for search without filter = 3.30875
 
-Search with filter avg time = 2.9584
-Avg fake positives = 477
-Avg error = 46.582%
-
-=========================================================================================
-
-	N = 1024	p = 0.75	M = 1024	k = 10
-
-Search without filter avg time = 3.17289
-
-Search with filter avg time = 3.17147
-Avg fake positives = 256
-Avg error = 25%
+Time for search with filter = 1.27714
+Fake positives = 114
+Error = 11.1328%
 
 =========================================================================================
 
-	N = 1024	p = 1	M = 1024	k = 10
+	N = 1024	p = 0.5	M = 2048	k = 10
 
-Search without filter avg time = 3.27472
+Time for search without filter = 3.42171
 
-Search with filter avg time = 3.27436
-Avg fake positives = 0
-Avg error = 0%
+Time for search with filter = 2.69601
+Fake positives = 275
+Error = 26.8555%
+
+=========================================================================================
+
+	N = 1024	p = 0.75	M = 2048	k = 10
+
+Time for search without filter = 3.53751
+
+Time for search with filter = 3.38525
+Fake positives = 198
+Error = 19.3359%
+
+=========================================================================================
+
+	N = 1024	p = 1	M = 2048	k = 10
+
+Time for search without filter = 3.67954
+
+Time for search with filter = 3.7477
+Fake positives = 0
+Error = 0%
 
 =========================================================================================

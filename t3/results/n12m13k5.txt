@@ -1,0 +1,51 @@
+=========================================================================================
+
+	N = 4096	p = 0	M = 8192	k = 5
+
+Time for search without filter = 13.4747
+
+Time for search with filter = 0.0032604
+Fake positives = 0
+Error = 0%
+
+=========================================================================================
+
+	N = 4096	p = 0.25	M = 8192	k = 5
+
+Time for search without filter = 15.9345
+
+Time for search with filter = 6.73241
+Fake positives = 498
+Error = 12.1582%
+
+=========================================================================================
+
+	N = 4096	p = 0.5	M = 8192	k = 5
+
+Time for search without filter = 16.9283
+
+Time for search with filter = 12.5096
+Fake positives = 725
+Error = 17.7002%
+
+=========================================================================================
+
+	N = 4096	p = 0.75	M = 8192	k = 5
+
+Time for search without filter = 17.6253
+
+Time for search with filter = 13.4547
+Fake positives = 587
+Error = 14.3311%
+
+=========================================================================================
+
+	N = 4096	p = 1	M = 8192	k = 5
+
+Time for search without filter = 15.1009
+
+Time for search with filter = 15.181
+Fake positives = 0
+Error = 0%
+
+=========================================================================================

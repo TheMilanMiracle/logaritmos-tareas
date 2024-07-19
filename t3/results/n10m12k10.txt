@@ -2,50 +2,50 @@
 
 	N = 1024	p = 0	M = 4096	k = 10
 
-Search without filter avg time = 2.83529
+Time for search without filter = 3.14009
 
-Search with filter avg time = 0.000234046
-Avg fake positives = 0
-Avg error = 0%
+Time for search with filter = 0.000675383
+Fake positives = 0
+Error = 0%
 
 =========================================================================================
 
 	N = 1024	p = 0.25	M = 4096	k = 10
 
-Search without filter avg time = 2.93066
+Time for search without filter = 3.28099
 
-Search with filter avg time = 0.812224
-Avg fake positives = 0
-Avg error = 0%
+Time for search with filter = 1.03471
+Fake positives = 37
+Error = 3.61328%
 
 =========================================================================================
 
 	N = 1024	p = 0.5	M = 4096	k = 10
 
-Search without filter avg time = 3.04993
+Time for search without filter = 3.42306
 
-Search with filter avg time = 1.66958
-Avg fake positives = 14
-Avg error = 1.36719%
+Time for search with filter = 2.16491
+Fake positives = 78
+Error = 7.61719%
 
 =========================================================================================
 
 	N = 1024	p = 0.75	M = 4096	k = 10
 
-Search without filter avg time = 3.16259
+Time for search without filter = 3.62893
 
-Search with filter avg time = 2.60518
-Avg fake positives = 54
-Avg error = 5.27344%
+Time for search with filter = 3.03745
+Fake positives = 82
+Error = 8.00781%
 
 =========================================================================================
 
 	N = 1024	p = 1	M = 4096	k = 10
 
-Search without filter avg time = 3.25985
+Time for search without filter = 3.72934
 
-Search with filter avg time = 3.26269
-Avg fake positives = 0
-Avg error = 0%
+Time for search with filter = 3.71188
+Fake positives = 0
+Error = 0%
 
 =========================================================================================
