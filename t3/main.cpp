@@ -1,23 +1,6 @@
 #include <bits/stdc++.h>
 #include "./bloom/bloom.h"
 
-void printBinary(unsigned int num) {
-    int numBits = sizeof(u_int8_t) * 8;
-    int mask = 1 << (numBits - 1);
-
-    for (int i = 0; i < numBits; i++) {
-        printf("%d", (num & mask) ? 1 : 0);
-        num <<= 1;
-    }
-}
-
-void printBits(BloomFilter *filter){
-    for(int i = 0; i < filter->M / 8; i++){
-        printBinary((filter->bits)[i]);
-    }
-    printf("\n");
-}
-
 
 std::chrono::time_point<std::chrono::system_clock> start, ref;
 long int N, M, K;
@@ -68,7 +51,7 @@ void main_out(){
     std::cout << "> main exited after " << elapsed_time(start).first << std::endl;
 }
 
-std::ofstream results_file("./results/n12m13k10.txt");
+std::ofstream results_file("./results.txt");
 
 int main(int argc, char *argv[]){
 
@@ -90,7 +73,7 @@ int main(int argc, char *argv[]){
             bloomInsert(filter, s);
         }
 
-        int loops = 5;
+        int loops = 1;
 
         double total_time = 0.0; 
         for(int i = 0; i < loops; i++){
@@ -106,7 +89,7 @@ int main(int argc, char *argv[]){
             total_time += elapsed_time(ref).second;
         }
         
-        results_file << "Search without filter avg time = " << (double) total_time / loops << "\n\n";
+        results_file << "Time for search without filter = " << (double) total_time / loops << "\n\n";
         
         total_time = 0.0; 
         int total_fp = 0;
@@ -127,12 +110,10 @@ int main(int argc, char *argv[]){
             total_fp += fake_positives;
             total_time += elapsed_time(ref).second;
         }
-        // std::cout << "Search without filter ended after " << elapsed_time(ref).first << std::endl;
-        // std::cout << "\twith "<< fake_positives <<" fake positives (error=" << ((double)fake_positives/N) * 100.0<< "%)" << std::endl;
 
-        results_file << "Search with filter avg time = " << (double) total_time / loops << "\n";
-        results_file << "Avg fake positives = " << (double) total_fp / loops << "\n";
-        results_file << "Avg error = " << ((double) ((double) total_fp / loops) / N) * 100.0 << "%\n\n";
+        results_file << "Time for search with filter = " << (double) total_time / loops << "\n";
+        results_file << "Fake positives = " << (double) total_fp / loops << "\n";
+        results_file << "Error = " << ((double) ((double) total_fp / loops) / N) * 100.0 << "%\n\n";
 
         destroyBloomFilter(filter);
     }
@@ -140,7 +121,6 @@ int main(int argc, char *argv[]){
     results_file << "=========================================================================================";
 
     main_out();
-
 
     return 0;
 }

@@ -34,9 +34,7 @@ void bloomInsert(BloomFilter *filter, std::string x){
         int idx = (filter->H)[h](x) % filter->M;
 
         (filter->bits)[(int)idx/8] |= (1 << (7 - idx%8));
-        // std::cout << idx << "(" << idx/8 << ", " << idx%8 << ")\t";
     }
-    // std::cout << std::endl;
 }
 
 bool bloomLook(BloomFilter *filter, std::string x){
@@ -44,11 +42,8 @@ bool bloomLook(BloomFilter *filter, std::string x){
         int idx = filter->H[h](x) % filter->M;
 
         if( !(filter->bits[(int)idx/8] & (1 << (7 - idx%8))) ){
-            // std::cout << idx << "(" << idx/8 << ", " << idx%8 << ")\t";
             return false;
         }
-        // std::cout << std::endl;
-        
     }
 
     return true;

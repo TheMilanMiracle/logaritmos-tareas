@@ -2,8 +2,8 @@
 #include "./bloom.h"
 
 std::pair<std::vector<std::string>, std::vector<std::string>> get_name_list(double p, long int N){
-    std::ifstream films("./bloom/Film-Names.csv");
-    std::ifstream names("./bloom/Popular-Baby-Names-Final.csv");
+    std::ifstream films("./lib/csv/Film-Names.csv");
+    std::ifstream names("./lib/csv/Popular-Baby-Names-Final.csv");
 
     unsigned long int n = N * p, f = N * (1.0 - p);
 
@@ -17,7 +17,7 @@ std::pair<std::vector<std::string>, std::vector<std::string>> get_name_list(doub
     while(f--){
         std::getline(films, buff);
 
-        buff += '\%';
+        buff += '\%'; //to make sure films won't match
         
         Films.push_back(buff);
 
